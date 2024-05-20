@@ -1,0 +1,25 @@
+#archimede_navbar {
+    background-color: white !important;
+    margin: 0px !important;
+}
+
+.logo_style {
+    margin: 0px !important;
+}
+
+.logo_style img {
+    width: 120px;
+}
+
+.link_style {
+    font-family: "Cinzel", serif !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    padding: 10px 45px !important;
+}
+
+@media screen and (min-width:992px) {
+    .logo_style img {
+        width: 180px;
+    }
+}
