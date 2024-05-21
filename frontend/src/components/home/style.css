@@ -1,0 +1,43 @@
+h2 {
+    font-family: "Cinzel", serif !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+p {
+    font-family: "Cinzel", serif !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.home_chi_siamo_style {
+    height: 400px;
+    color: #3B2313;
+}
+
+.home_prodotti_style {
+    background-color: #FF9000;
+    height: 400px;
+    margin-top: 20px;
+    color: #3B2313;
+}
+
+.home_contatti_style {
+    background-color: #558259;
+    height: 400px;
+    color: #3B2313;
+}
+
+.footer_style {
+    background-color: #3B2313;
+    height: 200px;
+    color: white;
+}

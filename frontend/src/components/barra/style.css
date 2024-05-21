@@ -1,0 +1,23 @@
+.barra_style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra_style img {
+    height: 40px;
+}
+
+.barra_pic_style {
+    display: none;
+}
+
+@media screen and (min-width:992px) {
+    .barra_style img {
+        height: 40px;
+        padding: 0px 20px;
+    }
+    .barra_pic_style {
+        display: block;
+    }
+}

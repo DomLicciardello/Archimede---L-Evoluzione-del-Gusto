@@ -1,13 +1,16 @@
 import './App.css';
-import SiteCarousel from './components/carousel/SiteCarousel';
-import SiteNavbar from './components/navbar/SiteNavbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from './components/pages/Home'
 
 function App() {
   return (
     <>
-    <SiteNavbar></SiteNavbar>
-    <SiteCarousel></SiteCarousel>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }
