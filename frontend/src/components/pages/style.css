@@ -1,0 +1,17 @@
+.home_map_style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.negozio_pic_style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.negozio_pic_style img {
+    max-width: 600px;
+}

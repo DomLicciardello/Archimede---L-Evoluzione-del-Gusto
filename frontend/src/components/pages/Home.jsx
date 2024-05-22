@@ -1,11 +1,11 @@
 import React from 'react'
-import Barra from '../barra/Barra';
 import SiteCarousel from '../carousel/SiteCarousel';
 import SiteHomeChiSiamo from '../home/SiteHomeChiSiamo';
-import SiteHomeContatti from '../home/SiteHomeContatti';
 import SiteHomeProdotti from '../home/SiteHomeProdotti';
 import SiteHomeFooter from '../home/SiteHomeFooter';
 import SiteNavbar from '../navbar/SiteNavbar';
+import SiteHomeRecensioni from '../home/SiteHomeRecensioni';
+import SiteHomeInstagram from '../home/SiteHomeInstagram';
 
 export default function Home() {
   return (
@@ -13,9 +13,9 @@ export default function Home() {
     <SiteNavbar></SiteNavbar>
     <SiteCarousel></SiteCarousel>
     <SiteHomeChiSiamo></SiteHomeChiSiamo>
-    <Barra></Barra>
     <SiteHomeProdotti></SiteHomeProdotti>
-    <SiteHomeContatti></SiteHomeContatti>
+    <SiteHomeInstagram></SiteHomeInstagram>
+    <SiteHomeRecensioni></SiteHomeRecensioni>
     <SiteHomeFooter></SiteHomeFooter>
     </>
   )
