@@ -28,13 +28,19 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+    margin: 0px;
 }
 
 p {
     font-family: "Cinzel", serif !important;
     font-size: 18px !important;
     font-weight: 500 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_div_chi_siamo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,15 +70,83 @@ p {
     transform: scale(0.9);
 }
 
+.riga_titolo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.riga_titolo span {
+    border: #3B2313 solid 2px;
+    width: 100px;
+    margin: 20px 0px 25px 0px;
+}
+
 /* Home - Prodotti */
 
 .home_prodotti_style {
     /* background: url(../../assets/sfondoarancio.png); */
     background-color: #FF9000;
-    height: 300px;
     color: #3B2313;
     background-attachment: fixed;
     padding: 40px 0px;
+}
+
+.home_prodotti_content_style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500rem;
+    margin-inline: auto;
+    margin-bottom: 20px;
+} 
+
+.home_prodotti_content_style .home_prodotto_style {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: opacity 0.4s linear;
+}
+
+.home_prodotto_style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_prodotto_style .text_product {
+    font-family: "Cinzel", serif !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    color: #3B2313;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    visibility: hidden;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.home_prodotti_content_style:has(.home_prodotto_style:hover) .home_prodotto_style:not(:hover) {
+    opacity: 0.7;
+}
+
+.home_prodotti_content_style:has(.home_prodotto_style:hover) .home_prodotto_style:hover .text_product {
+    visibility: visible;
+}
+
+@media screen and (min-width:992px) {
+    .home_prodotti_content_style {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 500rem;
+        margin-inline: auto;
+    }
+
+    .home_prodotti_content_style .home_prodotto_style {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        transition: opacity 0.4s linear;
+    }
 }
 
 /* Home - Instagram */

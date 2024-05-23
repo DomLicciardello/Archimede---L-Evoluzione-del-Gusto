@@ -8,6 +8,7 @@ export default function SiteHomeRecensioni() {
   return (
     <div className='home_recensioni_style'>
       <h2>RECENSIONI</h2>
+      <div className='riga_titolo'><span></span></div>
         <Container>
         <Row className='home_recensioni_content_style'>
           <Col md={6} lg={3} className='recensione_style'><p>RECENSIONE 1</p></Col>

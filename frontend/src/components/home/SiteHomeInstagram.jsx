@@ -6,6 +6,7 @@ export default function SiteHomeInstagram() {
     <div
     className='home_instagram_style'>
         <h2>INSTAGRAM</h2>
+        <div className='riga_titolo'><span></span></div>
     </div>
   )
 }
