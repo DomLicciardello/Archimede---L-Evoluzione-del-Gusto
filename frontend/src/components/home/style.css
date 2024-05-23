@@ -160,7 +160,16 @@ p {
     justify-content: center;
     align-items: center;
     padding: 40px 0px;
-    height: 300px;
+}
+
+.insta_scroll {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -220px;
+    margin-left: -140px;
+    height: 440px;
+    overflow: scroll;
 }
 
 /* Home - Recensioni */
