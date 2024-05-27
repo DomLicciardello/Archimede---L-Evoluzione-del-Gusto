@@ -22,9 +22,9 @@
 }
 
 h2 {
-    font-family: "Cinzel", serif !important;
-    font-size: 30px !important;
-    font-weight: 500 !important;
+    font-family: "Cinzel", serif;
+    font-size: 30px;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,9 +32,9 @@ h2 {
 }
 
 p {
-    font-family: "Cinzel", serif !important;
-    font-size: 18px !important;
-    font-weight: 500 !important;
+    font-family: "Cinzel", serif;
+    font-size: 18px;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,6 +170,78 @@ p {
     margin-left: -140px;
     height: 440px;
     overflow: scroll;
+}
+
+.button_instagram {
+    font-family: "Cinzel", serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    margin: 10px;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 0px;
+    box-shadow: 0px 0px 10px 0px #C44485;
+    background-size: 200% auto;
+    transition: 0.5s;
+    background-image: linear-gradient(45deg, #C44485 0%, #F6CD6A  51%, #C44485  100%);
+}
+
+.button_instagram:hover {
+    background-position: right;
+    color: white;
+}
+
+.button_instagram:active {
+    transform: scale(0.9);
+}
+
+.button_facebook {
+    font-family: "Cinzel", serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    margin: 10px;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    border: 0px;
+    box-shadow: 0px 0px 10px 0px #247BF4;
+    background-size: 200% auto;
+    transition: 0.5s;
+    background-image: linear-gradient(45deg, #247BF4 0%, #3B5A98 51%, #247BF4  100%);
+}
+
+.button_facebook:hover {
+    background-position: right;
+    color: white;
+}
+
+.button_facebook:active {
+    transform: scale(0.9);
+}
+
+.button_whatsapp {
+    font-family: "Cinzel", serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    margin: 10px;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    border: 0px;
+    box-shadow: 0px 0px 10px 0px #00B439;
+    background-size: 200% auto;
+    transition: 0.5s;
+    background-image: linear-gradient(45deg, #00B439 0%, #015255 51%, #00B439  100%);
+}
+
+.button_whatsapp:hover {
+    background-position: right;
+    color: white;
+}
+
+.button_whatsapp:active {
+    transform: scale(0.9);
 }
 
 /* Home - Recensioni */
