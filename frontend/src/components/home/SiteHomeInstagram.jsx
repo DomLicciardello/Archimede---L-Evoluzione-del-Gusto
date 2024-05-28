@@ -24,7 +24,7 @@ export default function SiteHomeInstagram() {
       </Row>
       <Row>
         <Col
-        md={12} lg={6}
+        md={12} lg={4}
         className='d-flex justify-content-center align-items-center pe-0 mt-1 mb-5'>
         <div style={{width:'300px', height:'584px', backgroundImage: `url(${smartphone})`, backgroundSize:"cover", position:'relative'}}>
           <div className='insta_scroll'>
@@ -38,7 +38,7 @@ export default function SiteHomeInstagram() {
         </div>
         </Col>
         <Col
-        md={12} lg={6}
+        md={12} lg={8}
         className='d-flex flex-column justify-content-center align-items-center p-0'>
         <div className='d-flex flex-column justify-content-center align-items-center ms-5 me-5'>
           <p style={{fontSize:'20px', textAlign:'center'}}>MANGIA, SCATTA E TAGGA @ARCHIMEDEIT SULLE TUE STORIE INSTAGRAM!</p>

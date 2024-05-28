@@ -155,8 +155,6 @@ p {
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 40px 0px;
 }
 
@@ -182,7 +180,7 @@ p {
     box-shadow: 0px 0px 10px 0px #C44485;
     background-size: 200% auto;
     transition: 0.5s;
-    background-image: linear-gradient(45deg, #C44485 0%, #F6CD6A  51%, #C44485  100%);
+    background-image: linear-gradient(45deg, #C44485 0%, #e5bf66  51%, #C44485  100%);
 }
 
 .button_instagram:hover {
@@ -203,10 +201,10 @@ p {
     color: white;
     border-radius: 20px;
     border: 0px;
-    box-shadow: 0px 0px 10px 0px #247BF4;
+    box-shadow: 0px 0px 10px 0px #3B5A98;
     background-size: 200% auto;
     transition: 0.5s;
-    background-image: linear-gradient(45deg, #247BF4 0%, #3B5A98 51%, #247BF4  100%);
+    background-image: linear-gradient(45deg, #3B5A98 0%, #247BF4 51%, #3B5A98  100%);
 }
 
 .button_facebook:hover {
@@ -227,10 +225,10 @@ p {
     color: white;
     border-radius: 20px;
     border: 0px;
-    box-shadow: 0px 0px 10px 0px #00B439;
+    box-shadow: 0px 0px 10px 0px #015255;
     background-size: 200% auto;
     transition: 0.5s;
-    background-image: linear-gradient(45deg, #00B439 0%, #015255 51%, #00B439  100%);
+    background-image: linear-gradient(45deg, #015255 0%, #00B439 51%, #015255  100%);
 }
 
 .button_whatsapp:hover {
