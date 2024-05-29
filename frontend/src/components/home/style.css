@@ -1,14 +1,24 @@
+h2 {
+    font-family: "Cinzel", serif;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
 /* Home - Chi Siamo */
 
 .home_chi_siamo_style {
     color: #3B2313;
-    background: url(../../assets/sfondo.png);
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px 0px;
+    border-top: #3B2313 solid 1px;
+    border-bottom: #3B2313 solid 1px;
 }
 
 .home_chi_siamo_text_style {
@@ -21,20 +31,10 @@
     padding: 0px 40px 40px 40px;
 }
 
-h2 {
-    font-family: "Cinzel", serif;
-    font-size: 30px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px;
-}
-
-p {
+.home_chi_siamo_text_style p {
     font-family: "Cinzel", serif;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +50,7 @@ p {
     font-family: "Cinzel", serif !important;
     font-size: 15px !important;
     font-weight: 500 !important;
-    margin: 10px;
+    margin: 10px 0px 0px 0px;
     padding: 10px 20px;
     color: white;
     border-radius: 20px;
@@ -87,7 +87,8 @@ p {
 .home_prodotti_style {
     background-color: #FF9000;
     color: #3B2313;
-    padding: 40px 0px;
+    padding: 40px 0px 30px 0px;
+    border-bottom: #3B2313 solid 1px;
 }
 
 .home_prodotti_content_style {
@@ -151,11 +152,9 @@ p {
 
 .home_instagram_style {
     color: #3B2313;
-    background: url(../../assets/sfondo.png);
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    padding: 40px 0px;
+    padding: 40px 0px 40px 0px;
 }
 
 .insta_scroll {
@@ -168,10 +167,25 @@ p {
     overflow: scroll;
 }
 
+.social_text_style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social_text_style p {
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
 .button_instagram {
     font-family: "Cinzel", serif !important;
     font-size: 15px !important;
     font-weight: 500 !important;
+    display: flex;
+    align-items: center;
     margin: 10px;
     padding: 10px 20px;
     color: rgb(255, 255, 255);
@@ -196,6 +210,8 @@ p {
     font-family: "Cinzel", serif !important;
     font-size: 15px !important;
     font-weight: 500 !important;
+    display: flex;
+    align-items: center;
     margin: 10px;
     padding: 10px 20px;
     color: white;
@@ -220,10 +236,12 @@ p {
     font-family: "Cinzel", serif !important;
     font-size: 15px !important;
     font-weight: 500 !important;
+    display: flex;
+    align-items: center;
     margin: 10px;
     padding: 10px 20px;
     color: white;
-    border-radius: 20px;
+    border-radius: 30px;
     border: 0px;
     box-shadow: 0px 0px 10px 0px #015255;
     background-size: 200% auto;
@@ -246,6 +264,7 @@ p {
     background-color: #558259;
     color: #3B2313;
     padding: 40px 0px;
+    border-top: #3B2313 solid 1px;
 }
 
 .recensione_div_style {

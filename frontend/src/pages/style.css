@@ -1,8 +1,15 @@
-.home_map_style {
+.contatti_row_style {
+    padding: 30px 0px;
+    background: url(../assets/sfondo.png);
+    background-attachment: fixed;
+}
+
+.contatti_map_style {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0px;
+    width: 100%;
 }
 
 .negozio_pic_style {
@@ -10,8 +17,29 @@
     justify-content: center;
     align-items: center;
     padding: 0px;
+    width: 100%;
 }
 
-.negozio_pic_style img {
-    max-width: 600px;
+@media screen and (min-width:992px) {
+    .contatti_map_style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        width: 50%;
+    }
+    
+    .negozio_pic_style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        width: 50%;
+    }
+}
+
+.contatti_info_style {
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    padding: 10px;
 }

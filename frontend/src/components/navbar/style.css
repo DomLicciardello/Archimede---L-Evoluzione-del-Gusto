@@ -1,6 +1,7 @@
 #archimede_navbar {
     background-color: white !important;
     margin: 0px !important;
+    border-bottom: #3B2313 solid 1px;
 }
 
 .logo_style {

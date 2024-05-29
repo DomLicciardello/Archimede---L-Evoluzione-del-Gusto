@@ -16,7 +16,7 @@ export default function SiteHomeRecensioni() {
       <div className='riga_titolo'><span style={{border:'white solid 2px'}}></span></div>
         <Container>
         <Row className='home_recensioni_content_style'>
-          <Col xs={12} md={6} xl={3} className='recensione_style'>
+          <Col xs={12} lg={6} xl={3} className='recensione_style'>
             <div className='recensione_div_style'>
               <div className='recensione_logo_style'>
                 <img src={recensione1} alt="avatar"/>
@@ -28,7 +28,7 @@ export default function SiteHomeRecensioni() {
               </div>
             </div>
           </Col>
-          <Col xs={12} md={6} xl={3} className='recensione_style'>
+          <Col xs={12} lg={6} xl={3} className='recensione_style'>
           <div className='recensione_div_style'>
               <div className='recensione_logo_style'>
                 <img src={recensione2} alt="avatar"/>
@@ -40,7 +40,7 @@ export default function SiteHomeRecensioni() {
               </div>
             </div>
           </Col>
-          <Col xs={12} md={6} xl={3} className='recensione_style'>
+          <Col xs={12} lg={6} xl={3} className='recensione_style'>
           <div className='recensione_div_style'>
               <div className='recensione_logo_style'>
                 <img src={recensione3} alt="avatar"/>
@@ -52,7 +52,7 @@ export default function SiteHomeRecensioni() {
               </div>
             </div>
           </Col>
-          <Col xs={12} md={6} xl={3} className='recensione_style'>
+          <Col xs={12} lg={6} xl={3} className='recensione_style'>
           <div className='recensione_div_style'>
               <div className='recensione_logo_style'>
                 <img src={recensione4} alt="avatar"/>
