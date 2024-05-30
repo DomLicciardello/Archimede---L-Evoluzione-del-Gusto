@@ -47,17 +47,17 @@ export default function SiteHomeInstagram() {
               <p>scatta, mangia e tagga @archimedeit sulle tue storie instagram! parteciperai ad un estrazione mensile per vincere un regalo!</p>
               <button className='button_instagram'><ion-icon name="logo-instagram" style={{marginRight:'5px'}}></ion-icon>instagram</button>
             </div>
-            <div className='riga_titolo'><span></span></div>
+            <div className='riga_titolo_social'><span></span></div>
             <div className='social_text_style'>
               <p>metti "mi piace" alla nostra pagina facebook per rimanere aggiornato sulle ultime novità!</p>
               <button className='button_facebook'><ion-icon name="logo-facebook" style={{marginRight:'5px'}}></ion-icon>facebook</button>
             </div>
-            <div className='riga_titolo'><span></span></div>
+            <div className='riga_titolo_social'><span></span></div>
             <div className='social_text_style'>
               <p>prenota arancini e cannoli take away comodamente dal nostro catalogo whatsapp!</p>
               <button className='button_whatsapp'><ion-icon name="logo-whatsapp" style={{marginRight:'5px'}}></ion-icon>whatsapp</button>
             </div>
-            <div className='riga_titolo'><span></span></div>
+            <div className='riga_titolo_social'><span></span></div>
         </Col>
       </Row>
     </Container>

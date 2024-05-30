@@ -258,6 +258,18 @@ h2 {
     transform: scale(0.9);
 }
 
+.riga_titolo_social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.riga_titolo_social span {
+    border: #3B2313 solid 1px;
+    width: 300px;
+    margin: 20px 0px 25px 0px;
+}
+
 /* Home - Recensioni */
 
 .home_recensioni_style {

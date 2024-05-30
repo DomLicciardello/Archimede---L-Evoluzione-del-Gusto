@@ -3,6 +3,20 @@
     justify-content: center;
     align-items: center;
     padding: 0px;
-    width: 50%;
-    height: 800px;
+    min-height: 600px;
+}
+
+.testo_chisiamo {
+    margin: 20px 50px 40px 50px;
+}
+
+.testo_chisiamo h6 {
+    font-family: "Cinzel", serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+}
+
+.testo_chisiamo p {
+    font-weight: 500;
+    margin-bottom: 35px;
 }
