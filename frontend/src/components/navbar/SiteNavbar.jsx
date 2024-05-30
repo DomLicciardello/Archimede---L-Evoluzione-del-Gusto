@@ -14,9 +14,9 @@ export default function SiteNavbar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto d-flex align-items-center">
             <Nav.Link className='link_style' href="http://localhost:3000/chisiamo">CHI SIAMO</Nav.Link>
-            <Nav.Link className='link_style' href="#">PRODOTTI</Nav.Link>
+            <Nav.Link className='link_style' href="http://localhost:3000/prodotti">PRODOTTI</Nav.Link>
             <Navbar.Brand href="http://localhost:3000/" className='logo_style d-none d-lg-block'><img src={logo} alt='logo'/></Navbar.Brand>
-            <Nav.Link className='link_style mx-4' href="#">SHOP</Nav.Link>
+            <Nav.Link className='link_style mx-4' href="http://localhost:3000/shop">SHOP</Nav.Link>
             <Nav.Link className='link_style' href="http://localhost:3000/contatti">CONTATTI</Nav.Link>
           </Nav>
         </Navbar.Collapse>

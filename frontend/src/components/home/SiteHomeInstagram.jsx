@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import smartphone from '../../assets/smartphone.png'
-import Barra from '../barra/Barra'
 
 function importAll(r) {
   return r.keys().map(r);

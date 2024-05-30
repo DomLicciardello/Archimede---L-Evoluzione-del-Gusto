@@ -1,0 +1,11 @@
+.not_found {
+    background-color: white;
+    margin: 50px 0px 50px 0px;
+    padding: 50px 0px 50px 0px;
+    border: black solid 1px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
