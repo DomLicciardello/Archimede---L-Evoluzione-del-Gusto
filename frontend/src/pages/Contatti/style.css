@@ -1,0 +1,88 @@
+.contatti_row_style {
+    padding: 30px 0px;
+    background: url(../../assets/sfondo.png);
+    background-attachment: fixed;
+}
+
+.contatti_map_style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+}
+
+.negozio_pic_style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+}
+
+@media screen and (min-width:992px) {
+    .contatti_map_style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        width: 50%;
+    }
+    
+    .negozio_pic_style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        width: 50%;
+    }
+}
+
+.contatti_info_style {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contatti_info_style p {
+    margin: 0px;
+}
+
+.contatti_div_style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.contatti_div_style p {
+    font-weight: 400;
+}
+
+.contatti_title_style {
+    font-family: "Cinzel", serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    display: flex;
+    align-items: center;
+}
+
+.social_contatti_style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    align-items: center;
+}
+
+@media screen and (min-width:576px) {
+    .social_contatti_style {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 30px;
+    }
+}

@@ -6,34 +6,37 @@ import Col from 'react-bootstrap/Col';
 
 export default function SiteHomeFooter() {
   return (
-    <Container fluid className='footer_style'>
-    <Row>
-      <Col sm={12} md={4} lg={4}
+    <Container fluid>
+    <Row className='footer_style'>
+      <Col xs={12} sm={12} md={4} lg={4} xl={4}
       className='footer_div_style'>
-        <p style={{fontSize:'16px', marginBottom:'10px'}}><ion-icon name="time-outline" style={{marginRight:'5px', fontSize:'22px'}}></ion-icon>orario</p>
-        <p>lun: chiuso</p>
-        <p>mar-sab: 9-20</p>
-        <p>dom: 9-13</p>
+        <p className='title_div_footer'><ion-icon name="time-outline" style={{marginRight:'5px'}}></ion-icon>orario</p>
+        <p>Lunedì: chiuso</p>
+        <p>Martedì-Sabato: 9-14 / 16-20</p>
+        <p></p>
+        <p>Domenica: 9-13</p>
       </Col>
-      <Col sm={12} md={4} lg={4}
+      <Col xs={12} sm={12} md={4} lg={4} xl={4}
       className='footer_div_style'>
-        <p style={{fontSize:'16px', marginBottom:'10px'}}><ion-icon name="location-outline" style={{marginRight:'5px', fontSize:'22px'}}></ion-icon>dove siamo</p>
-        <p>via maffacini, 3</p>
+        <p className='title_div_footer'><ion-icon name="location-outline" style={{marginRight:'5px'}}></ion-icon>dove siamo</p>
+        <p>Via Don Enrico Maffacini, 3</p>
         <p>43036, Fidenza PR</p>
       </Col>
-      <Col sm={12} md={4} lg={4}
+      <Col xs={12} sm={12} md={4} lg={4} xl={4}
       className='footer_div_style'
       style={{flexDirection:'column'}}>
-        <p style={{fontSize:'16px', marginBottom:'10px'}}>social</p>
+        <p className='title_div_footer'>social</p>
         <div>
-        <ion-icon name="logo-facebook"style={{marginRight:'10px'}}></ion-icon>
-        <ion-icon name="logo-instagram"style={{marginRight:'10px'}}></ion-icon>
-        <ion-icon name="logo-whatsapp"></ion-icon>
+        <ion-icon name="logo-facebook" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
+        <ion-icon name="logo-instagram" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
+        <ion-icon name="logo-whatsapp" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
         </div>
-        <p style={{fontSize:'13px'}}>privacy policy</p>
+        <p style={{fontSize:'11px', margin:'2px 0px'}}>Contatti</p>
+        <p style={{fontSize:'11px'}}>Privacy Policy</p>
       </Col>
-      <Col>
-      <p style={{margin:'0px', fontSize:'13px'}}>2024 © ARCHIMEDE DI L&D S.R.L.</p>
+      <Col md={12}
+      className='copyright'>
+      <p>2024 © Archimede di L&D S.R.L.</p>
       </Col>
     </Row>
   </Container>

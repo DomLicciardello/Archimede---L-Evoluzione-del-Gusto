@@ -13,7 +13,7 @@ export default function SiteNavbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto d-flex align-items-center">
-            <Nav.Link className='link_style' href="#">CHI SIAMO</Nav.Link>
+            <Nav.Link className='link_style' href="http://localhost:3000/chisiamo">CHI SIAMO</Nav.Link>
             <Nav.Link className='link_style' href="#">PRODOTTI</Nav.Link>
             <Navbar.Brand href="http://localhost:3000/" className='logo_style d-none d-lg-block'><img src={logo} alt='logo'/></Navbar.Brand>
             <Nav.Link className='link_style mx-4' href="#">SHOP</Nav.Link>
