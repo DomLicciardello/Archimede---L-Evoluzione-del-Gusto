@@ -14,7 +14,7 @@ export default function SiteHomeInstagram() {
   
   return (
   <>
-    <Container className='home_instagram_style'>
+    <Container className='home_instagram_style py-5'>
       <Row>
         <Col md={12}>
         <h2>SOCIAL</h2>
