@@ -2,7 +2,6 @@ import React from 'react'
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 

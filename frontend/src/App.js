@@ -8,6 +8,7 @@ import Prodotti from './pages/Prodotti/Prodotti';
 import Shop from './pages/Shop/Shop';
 import NotFound from './pages/NotFound/NotFound';
 import InfoProdotto from './pages/InfoProdotto/InfoProdotto';
+import Login from './pages/AreaRiservata/Login';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/products/:id' element={<InfoProdotto/>}/>
         <Route path='/contatti' element={<Contatti/>}/>
+        <Route path='/login' element={<Login/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>

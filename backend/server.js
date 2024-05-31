@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from 'cors';
 import { productsRoute } from './services/products/index.js'
 import { ordersRoute } from './services/orders/index.js'
+import { adminRoute } from "./services/admin/index.js";
 import { badRequestHandler, genericErrorHandler, notfoundHandler, unauthorizedHandler } from "./errorHandlers.js"
 
 config();
@@ -16,6 +17,7 @@ app.use(cors());
 
 app.use("/products", productsRoute);
 app.use("/orders", ordersRoute);
+app.use("/admin", adminRoute)
 
 app.use(badRequestHandler);
 app.use(unauthorizedHandler);
