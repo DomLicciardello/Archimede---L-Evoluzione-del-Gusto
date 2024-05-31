@@ -34,7 +34,7 @@ export default function Login() {
           //console.log(data)
           localStorage.setItem("token", data.token);
           alert("Accesso effettuato!");
-          navigate("/shop");
+          navigate("/areariservata");
         })
         .catch((err) => {
           alert("Si è verificato un errore! " + err);

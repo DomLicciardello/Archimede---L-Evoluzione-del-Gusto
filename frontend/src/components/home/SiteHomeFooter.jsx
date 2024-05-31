@@ -3,6 +3,7 @@ import './style.css'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
 
 export default function SiteHomeFooter() {
   return (
@@ -32,7 +33,7 @@ export default function SiteHomeFooter() {
         <ion-icon name="logo-whatsapp" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
         </div>
         <p style={{fontSize:'11px', margin:'2px 0px'}}>Privacy Policy</p>
-        <p style={{fontSize:'11px'}}>Area Riservata</p>
+        <Link to='/areariservata' style={{textDecoration:'none', color:'white'}}><p style={{fontSize:'11px'}}>Area Riservata</p></Link>
       </Col>
       <Col md={12}
       className='copyright'>

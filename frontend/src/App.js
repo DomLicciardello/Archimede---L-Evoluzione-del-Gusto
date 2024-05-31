@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Home from './pages/Home'
 import Contatti from './pages/Contatti/Contatti'
 import ChiSiamo from './pages/ChiSiamo/ChiSiamo';
@@ -9,6 +9,15 @@ import Shop from './pages/Shop/Shop';
 import NotFound from './pages/NotFound/NotFound';
 import InfoProdotto from './pages/InfoProdotto/InfoProdotto';
 import Login from './pages/AreaRiservata/Login';
+import AreaRiservata from './pages/AreaRiservata/AreaRiservata';
+
+const isAdminAuth = () => {
+  return localStorage.getItem('token') !== null;
+};
+
+const PrivateRoute = ({ element, ...rest }) => {
+  return isAdminAuth() ? element : <Navigate to="/login" />;
+};
 
 function App() {
   return (
@@ -22,6 +31,7 @@ function App() {
         <Route path='/products/:id' element={<InfoProdotto/>}/>
         <Route path='/contatti' element={<Contatti/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/areariservata' element={<PrivateRoute element={<AreaRiservata/>}/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
