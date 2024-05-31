@@ -149,11 +149,6 @@ export default function Prodotti() {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col className='prenotazione_torte'>
-              <h2>prenotazione torte</h2>
-          </Col>
-        </Row>
     </Container>
     <SiteHomeFooter/>
     </>

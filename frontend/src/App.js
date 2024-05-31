@@ -7,6 +7,7 @@ import ChiSiamo from './pages/ChiSiamo/ChiSiamo';
 import Prodotti from './pages/Prodotti/Prodotti';
 import Shop from './pages/Shop/Shop';
 import NotFound from './pages/NotFound/NotFound';
+import InfoProdotto from './pages/InfoProdotto/InfoProdotto';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/chisiamo' element={<ChiSiamo/>}/>
         <Route path='/prodotti' element={<Prodotti/>}/>
         <Route path='/shop' element={<Shop/>}/>
+        <Route path='/products/:id' element={<InfoProdotto/>}/>
         <Route path='/contatti' element={<Contatti/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>

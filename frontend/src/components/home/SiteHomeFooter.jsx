@@ -31,8 +31,8 @@ export default function SiteHomeFooter() {
         <ion-icon name="logo-instagram" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
         <ion-icon name="logo-whatsapp" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
         </div>
-        <p style={{fontSize:'11px', margin:'2px 0px'}}>Contatti</p>
-        <p style={{fontSize:'11px'}}>Privacy Policy</p>
+        <p style={{fontSize:'11px', margin:'2px 0px'}}>Privacy Policy</p>
+        <p style={{fontSize:'11px'}}>Area Riservata</p>
       </Col>
       <Col md={12}
       className='copyright'>
