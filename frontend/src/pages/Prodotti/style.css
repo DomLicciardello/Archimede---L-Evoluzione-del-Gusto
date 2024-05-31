@@ -1,0 +1,33 @@
+.row_arancini_style {
+    padding: 40px 40px;
+    background-color: #FF9000;
+}
+
+.arancino_style {
+    display: flex;
+}
+
+.arancino_style img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid 2px #3B2313;
+    margin: 10px;
+}
+
+.arancino_style h5 {
+    font-family: "Cinzel", serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+}
+
+.arancino_style p {
+    font-size: 18px;
+}
+
+.prenotazione_torte {
+    background-color: #558259;
+    color: white;
+    padding: 40px 0px;
+}

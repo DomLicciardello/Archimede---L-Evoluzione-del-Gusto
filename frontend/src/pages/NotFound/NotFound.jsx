@@ -18,11 +18,10 @@ export default function NotFound() {
                 <h2>OOPS...</h2>
                 <h2>PAGINA NON TROVATA!</h2>
                 <hr></hr>
-                <h2 style={{fontSize:'20px'}}>PAGE NOT FOUND</h2>
                 <h2 style={{fontSize:'60px'}}>404</h2>
                 <h2>ERROR</h2>
                 <hr></hr>
-                <h2>TORNA AL SITO</h2>
+                <h2 style={{fontSize:'20px'}}>PAGE NOT FOUND</h2>
             </Col>
         </Row>
     </Container>

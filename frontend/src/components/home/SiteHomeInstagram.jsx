@@ -41,7 +41,7 @@ export default function SiteHomeInstagram() {
         </div>
         </Col>
         <Col md={12} lg={6} xl={6}
-        className='d-flex flex-column justify-content-center mt-4'>
+        className='d-flex flex-column justify-content-center mt-4 p-0'>
             <div className='social_text_style'>
               <p>scatta, mangia e tagga @archimedeit sulle tue storie instagram! parteciperai ad un estrazione mensile per vincere un regalo!</p>
               <button className='button_instagram'><ion-icon name="logo-instagram" style={{marginRight:'5px'}}></ion-icon>instagram</button>

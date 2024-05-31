@@ -171,6 +171,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px 40px;
 }
 
 .social_text_style p {
