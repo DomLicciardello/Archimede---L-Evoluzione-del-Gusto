@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound/NotFound';
 import InfoProdotto from './pages/InfoProdotto/InfoProdotto';
 import Login from './pages/AreaRiservata/Login';
 import AreaRiservata from './pages/AreaRiservata/AreaRiservata';
+import AggiungiProdotto from './components/admin/AggiungiProdotto';
 
 const isAdminAuth = () => {
   return localStorage.getItem('token') !== null;
@@ -32,6 +33,7 @@ function App() {
         <Route path='/contatti' element={<Contatti/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/areariservata' element={<PrivateRoute element={<AreaRiservata/>}/>}/>
+        <Route path='/areariservata/aggiungiprodotto' element={<PrivateRoute element={<AggiungiProdotto/>}/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
