@@ -1,5 +1,7 @@
 import { Router } from "express"
 import Product from "./model.js"
+import { authMidd } from '../../auth/index.js'
+import multerImg from "../../config/multerImg.js"
 
 export const productsRoute = Router();
 
@@ -26,7 +28,7 @@ productsRoute.get("/:id", async (req, res, next) => {
     }
 })
 
-productsRoute.post("/", async (req, res, next) => {
+productsRoute.post("/", authMidd, async (req, res, next) => {
     try {
         let product = await Product.create({...req.body})
         res.send(product);
@@ -34,6 +36,21 @@ productsRoute.post("/", async (req, res, next) => {
         next(error);
     }
 })
+
+productsRoute.patch("/:id/img", authMidd, multerImg, async (req, res, next) => {
+    try {
+      let update = await Product.findByIdAndUpdate(
+        req.params.id,
+        { immagine: req.file.path },
+        {
+          new: true,
+        }
+      )
+      res.send(update)
+    } catch (error) {
+      next(error)
+    }
+  })
 
 productsRoute.put("/:id", async (req, res, next) => {
     try {

@@ -3,6 +3,8 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import SiteNavbar from '../../components/navbar/SiteNavbar';
+import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 
 export default function Login() {
     const [username, setUsername] = useState();
@@ -43,13 +45,11 @@ export default function Login() {
 
   return (
     <>
+    <SiteNavbar></SiteNavbar>
+    <h2 className='mt-5'>area riservata</h2>
     <div
-    style={{
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
-    marginTop:'200px',
-    }}>
+    className='d-flex flex-column justify-content-center align-items-center'
+    style={{margin:'50px 0px 140px 0px'}}>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formGroupUsername">
                 <Form.Label>Username</Form.Label>
@@ -59,11 +59,12 @@ export default function Login() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control name='password' type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
               </Form.Group>
-              <Button variant="dark" type="submit">
+              <Button variant="dark" type="submit" style={{backgroundColor:'#3B2313'}}>
                 Accedi
              </Button>
             </Form>
     </div>
+    <SiteHomeFooter></SiteHomeFooter>
     </>
   )
 }

@@ -10,7 +10,7 @@ import NotFound from './pages/NotFound/NotFound';
 import InfoProdotto from './pages/InfoProdotto/InfoProdotto';
 import Login from './pages/AreaRiservata/Login';
 import AreaRiservata from './pages/AreaRiservata/AreaRiservata';
-import AggiungiProdotto from './components/admin/AggiungiProdotto';
+import AggiungiProdotto from './pages/AreaRiservata/AggiungiProdotto';
 
 const isAdminAuth = () => {
   return localStorage.getItem('token') !== null;
