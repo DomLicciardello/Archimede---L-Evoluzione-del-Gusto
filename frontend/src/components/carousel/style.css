@@ -6,10 +6,11 @@
 .carousel_caption_style {
     background-color: #3b2313dd;
     border-radius: 70px;
+    padding: 20px;
 }
 
 .title_carousel_style {
-    font-size: 30px;
+    font-size: 38px;
 }
 
 @media screen and (min-width:992px) {

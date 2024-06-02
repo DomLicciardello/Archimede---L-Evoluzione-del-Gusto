@@ -1,9 +1,13 @@
 import React from 'react'
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
-import Card from 'react-bootstrap/Card';
-import { useParams } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import './style.css'
 
 export default function InfoProdotto() {
     const { id } = useParams();
@@ -22,20 +26,41 @@ export default function InfoProdotto() {
   return (
     <>
     <SiteNavbar/>
-    <div>
-        <Card>
-        <Card.Img variant="top" src={data.immagine}/>
-        <Card.Body>
-          <Card.Text>
-            <div>
-              <h2>{data.prodotto}</h2>
-              <p>{data.descrizione}</p>
-              <p>Prezzo: {data.prezzo}€</p>
-            </div>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </div>
+    <Container>
+        <Row className='pt-4 pb-4'>
+            <Col md={12}
+            className='mb-4'>
+                <h2>shop online</h2>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={12} xl={6}>
+              <div className='d-flex align-items-center justify-content-center'>
+                <img src={data.immagine} alt="immagine_prodotto"
+                style={{maxWidth:'400px', border:'solid 1px #3B2313', borderRadius:'30px', objectFit:'center'}} />
+              </div>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={12} xl={6}
+            className='mt-2'>
+              <div>
+                <h3 id='nome_prodotto'>{data.prodotto}</h3>
+                <p>{data.descrizione}</p>
+                <p>Prezzo: {data.prezzo}€</p>
+                <Button variant="dark" className='mb-4' style={{backgroundColor:'#3B2313'}}>Aggiungi al carrello</Button>
+                <p><b>Quando verrà spedito l'ordine?</b></p>
+                <p>Le spedizioni vengono effettuate il martedì e il mercoledì. Gli ordini effettuati entro il mercoledì alle 8:00 verranno spediti il mercoledì stesso. Il corriere non può garantire la consegna entro il venerdì.</p>
+                <p>Per maggiori informazioni <a href="/contatti">contattaci</a>.</p>
+              </div>
+            </Col>
+            <Col md={12}
+            className='d-flex justify-content-center align-items-center mt-3'>
+            <Link to='/shop'>
+            <Button
+            style={{backgroundColor:'#558259'}}>
+            Torna allo shop
+            </Button>
+            </Link>
+            </Col>
+        </Row>
+    </Container>
     <SiteHomeFooter/>
     </>
   )
