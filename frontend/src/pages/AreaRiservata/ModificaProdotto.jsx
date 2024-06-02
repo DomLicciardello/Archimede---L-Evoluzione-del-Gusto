@@ -7,7 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
-import { useParams, Link } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 export default function InfoProdotto() {
@@ -18,8 +19,13 @@ export default function InfoProdotto() {
     const [prezzo, setPrezzo] = useState();
     const [immagine, setImmagine] = useState(null);
     const token = localStorage.getItem('token')
+    const navigate = useNavigate();
     const formData = new FormData();
     formData.append('immagine', immagine);
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
         fetch(`http://localhost:3001/products/${id}`)
@@ -72,6 +78,23 @@ export default function InfoProdotto() {
           }
       };
 
+      const handleDelete = async (e) => {
+        e.preventDefault();
+        const response = await fetch(`http://localhost:3001/products/${id}`, {
+            method: `DELETE`,
+            headers: {
+              Authorization: `Bearer ${token}`
+            },
+          });
+    
+          if (response.ok) {
+            alert('Prodotto eliminato con successo!');
+            navigate('/areariservata');
+          } else {
+            alert('Il prodotto non è stato eliminato!');
+          }
+      };
+
   return (
     <>
     <SiteNavbar/>
@@ -81,10 +104,11 @@ export default function InfoProdotto() {
             className='mb-4'>
                 <h2>modifica o elimina</h2>
             </Col>
-            <Col md={3}>
+            
+            <Col xs={12} sm={12} md={12} lg={4} xl={4}>
             <Card
-            className='d-flex align-items-center justify-content-center'
-            style={{height:'400px'}}>
+            className='mb-3'
+            style={{height:'auto'}}>
             <Card.Img
             variant="top"
             style={{objectFit:'cover', height:'200px'}}
@@ -103,17 +127,16 @@ export default function InfoProdotto() {
             </Card>
             </Col>
 
-            <Col md={6}>
-            <div
-            className='d-flex justify-content-center align-items-center'>
+            <Col xs={12} sm={12} md={6} lg={4} xl={4}
+            className='ps-4 pe-4'>
             <Form onSubmit={handleSubmit}>
 
-            <Form.Group as={Col} controlId="formProdotto" className="mb-3">
+            <Form.Group controlId="formProdotto" className="mb-3">
                 <Form.Label>Prodotto</Form.Label>
                 <Form.Control type="text" placeholder="Prodotto" onChange={(e) => setProdotto(e.target.value)}/>
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formPrezzo" className="mb-3">
+            <Form.Group controlId="formPrezzo" className="mb-3">
                 <Form.Label>Prezzo</Form.Label>
                 <Form.Control type="number" placeholder="Prezzo" step="any" min="1" max="99" maxLength="4" onChange={(e) => setPrezzo(e.target.value)}/>
             </Form.Group>
@@ -123,27 +146,32 @@ export default function InfoProdotto() {
                 <Form.Control as="textarea" placeholder="Descrizione..." onChange={(e) => setDescrizione(e.target.value)}/>
             </Form.Group>
 
+            <div className='d-flex justify-content-center mb-2'>
             <Button variant="warning" type="submit">
-                Modifica informazioni
+            Modifica informazioni
             </Button>
-            </Form>
             </div>
+            </Form>
             </Col>
 
-            <Col md={3}>
+            <Col xs={12} sm={12} md={6} lg={4} xl={4}
+            className='ps-4 pe-4'>
             <Form onSubmit={handleImg}>
-            <Form.Group controlId="formImmagine" className="mb-3">
+                <Form.Group controlId="formImmagine" className="mb-3">
                 <Form.Label>Immagine</Form.Label>
                 <Form.Control type="file"  onChange={(e) => setImmagine(e.target.files[0])}/>
-            </Form.Group>
-            <Button variant="warning" type="submit">
+                </Form.Group>
+                <div className='d-flex justify-content-center'>
+                <Button variant="warning" type="submit">
                 Modifica immagine
-            </Button>
+                </Button>
+                </div>
             </Form>
-            <Button variant="danger" type="submit"
-            className='mt-3'>
-                Elimina prodotto
+            <div className='d-flex justify-content-center'>
+            <Button variant="danger" onClick={handleShow} className='mt-3'>
+            Elimina prodotto
             </Button>
+            </div>
             </Col>
 
             <Col md={12}
@@ -158,6 +186,17 @@ export default function InfoProdotto() {
         </Row>
     </Container>
     <SiteHomeFooter/>
+
+    <Modal show={show} onHide={handleClose}>
+    <Modal.Header closeButton>
+    <Modal.Title style={{fontSize:'18px'}}>Vuoi eliminare definitivamente il prodotto?</Modal.Title>
+    </Modal.Header>
+    <Modal.Footer>
+    <Button variant="danger" onClick={handleDelete}>
+        Elimina
+    </Button>
+    </Modal.Footer>
+    </Modal>
     </>
   )
 }

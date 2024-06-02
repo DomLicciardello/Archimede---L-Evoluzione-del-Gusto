@@ -29,7 +29,7 @@ export default function CardShop() {
         <Col>
           <Link to={`/products/${product._id}`} key={product._id} style={{textDecoration:"none"}}>
           <Card
-          style={{height:'400px'}}>
+          style={{height:'auto'}}>
             <Card.Img
             variant="top"
             style={{objectFit:'cover', height:'200px'}}
@@ -37,9 +37,6 @@ export default function CardShop() {
             <Card.Body>
               <Card.Title><h2 style={{fontSize:"25px"}}>{product.prodotto}</h2></Card.Title>
               <Card.Text>
-              <p style={{fontSize:"14px"}}>
-                {product.descrizione}
-              </p>
               <p style={{fontSize:"14px"}}>
                 Prezzo: {product.prezzo}€
               </p>

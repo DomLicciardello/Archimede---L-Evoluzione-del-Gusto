@@ -14,7 +14,7 @@ export default function AreaRiservata() {
     <Container>
         <Row className='pt-4 pb-4'>
             <Col md={12}>
-                <h2>gestione prodotti</h2>
+                <h2>area riservata</h2>
                 <div
                 className='d-flex flex-column justify-content-center align-items-center mt-3 mb-1'>
                 <Button variant="dark"

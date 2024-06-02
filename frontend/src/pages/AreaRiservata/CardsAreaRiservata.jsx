@@ -29,7 +29,7 @@ export default function CardShop() {
       {data.toReversed().map((product) => (
         <Col>
           <Card
-          style={{height:'400px'}}>
+          style={{height:'auto'}}>
             <Card.Img
             variant="top"
             style={{objectFit:'cover', height:'200px'}}
@@ -37,14 +37,10 @@ export default function CardShop() {
             <Card.Body>
               <Card.Title><h2 style={{fontSize:"25px"}}>{product.prodotto}</h2></Card.Title>
               <Card.Text>
-              <p style={{fontSize:"14px"}}>
-                {product.descrizione}
-              </p>
-              <p style={{fontSize:"14px"}}>
-                Prezzo: {product.prezzo}€
-              </p>
               </Card.Text>
-              <Link to={`/areariservata/modificaprodotto/${product._id}`} key={product._id} style={{textDecoration:"none"}}>
+              <Link to={`/areariservata/modificaprodotto/${product._id}`} key={product._id}
+              style={{textDecoration:"none"}}
+              className='d-flex justify-content-center align-items-center'>
               <Button variant="warning" type="submit" className='me-2'>
                 Gestisci prodotto
               </Button>
