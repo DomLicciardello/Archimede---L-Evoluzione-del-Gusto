@@ -5,7 +5,7 @@ import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import CardsAreaRiservata from '../../components/card/CardsAreaRiservata';
+import CardsAreaRiservata from './CardsAreaRiservata';
 
 export default function AreaRiservata() {
   return (
