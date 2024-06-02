@@ -1,11 +1,11 @@
 import React from 'react';
-import CardShop from '../../components/card/CardShop';
 import Button from 'react-bootstrap/Button';
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import CardsAreaRiservata from '../../components/card/CardsAreaRiservata';
 
 export default function AreaRiservata() {
   return (
@@ -24,7 +24,7 @@ export default function AreaRiservata() {
                 </div>
             </Col>
             <Col md={12}>
-              <CardShop></CardShop>
+              <CardsAreaRiservata></CardsAreaRiservata>
             </Col>
         </Row>
     </Container>
