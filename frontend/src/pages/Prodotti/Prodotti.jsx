@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
+import { Link } from 'react-router-dom';
 
 import ragu from '../../assets/products/arancini/ragu.jpg'
 import prosciutto from '../../assets/products/arancini/prosciutto.jpg'
@@ -130,6 +131,12 @@ export default function Prodotti() {
                   <p>Ripieno del tortello d'erbetta.</p>
                 </div>
               </div>
+            </Col>
+            <Col md={12}
+            className='d-flex justify-content-center mt-4'>
+            <Link to='https://wa.me/c/393895380724' target="_blank" style={{textDecoration:'none'}}>
+              <button className='button_whatsapp'><ion-icon name="logo-whatsapp" style={{marginRight:'5px'}}></ion-icon>prenota con whatsapp</button>
+            </Link>
             </Col>
         </Row>
         <Row className='pt-4 pb-4'>

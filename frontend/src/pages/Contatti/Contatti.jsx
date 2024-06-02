@@ -6,6 +6,7 @@ import './style.css'
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import negozio from '../../assets/negozio.jpg'
+import { Link } from 'react-router-dom';
 
 export default function Contatti() {
   return (
@@ -42,9 +43,15 @@ export default function Contatti() {
           </Col>
           <Col sm={12} md={12} lg={6} className='contatti_map_style'><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d687.505503380443!2d10.06520946071357!3d44.86538634763051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47805e3ae686389d%3A0x2a9389a67ee4fd77!2sPasticceria%20Archimede!5e0!3m2!1sit!2sit!4v1716393747531!5m2!1sit!2sit" height="500" style={{width:'100%', padding:'2px'}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="archimede map"></iframe></Col>
           <Col md={12} className='social_contatti_style'>
-          <button className='button_facebook'><ion-icon name="logo-facebook" style={{marginRight:'5px'}}></ion-icon>facebook</button>
-          <button className='button_instagram'><ion-icon name="logo-instagram" style={{marginRight:'5px'}}></ion-icon>instagram</button>
-          <button className='button_whatsapp'><ion-icon name="logo-whatsapp" style={{marginRight:'5px'}}></ion-icon>whatsapp</button>
+          <Link to='https://www.facebook.com/ArchimedeIT' target="_blank" style={{textDecoration:'none'}}>
+              <button className='button_facebook'><ion-icon name="logo-facebook" style={{marginRight:'5px'}}></ion-icon>facebook</button>
+              </Link>
+          <Link to='https://www.instagram.com/archimedeit/' target="_blank" style={{textDecoration:'none'}}>
+              <button className='button_instagram'><ion-icon name="logo-instagram" style={{marginRight:'5px'}}></ion-icon>instagram</button>
+              </Link>
+              <Link to='https://wa.me/c/393895380724' target="_blank" style={{textDecoration:'none'}}>
+              <button className='button_whatsapp'><ion-icon name="logo-whatsapp" style={{marginRight:'5px'}}></ion-icon>whatsapp</button>
+              </Link>
           </Col>
         </Row>
       </Container>

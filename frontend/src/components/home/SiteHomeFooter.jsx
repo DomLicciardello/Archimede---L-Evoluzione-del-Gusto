@@ -28,9 +28,15 @@ export default function SiteHomeFooter() {
       style={{flexDirection:'column'}}>
         <p className='title_div_footer'>social</p>
         <div>
+        <Link to='https://www.facebook.com/ArchimedeIT' target="_blank" style={{textDecoration:'none', color:'white'}}>
         <ion-icon name="logo-facebook" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
+        </Link>
+        <Link to='https://www.instagram.com/archimedeit/' target="_blank" style={{textDecoration:'none', color:'white'}}>
         <ion-icon name="logo-instagram" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
+        </Link>
+        <Link to='https://wa.me/c/393895380724' target="_blank" style={{textDecoration:'none', color:'white'}}>
         <ion-icon name="logo-whatsapp" style={{margin:'3px', fontSize:'25px'}}></ion-icon>
+        </Link>
         </div>
         <p style={{fontSize:'11px', margin:'2px 0px'}}>Privacy Policy</p>
         <Link to='/areariservata' style={{textDecoration:'none', color:'white'}}><p style={{fontSize:'11px'}}>Area Riservata</p></Link>

@@ -13,7 +13,7 @@ export default function ChiSiamo() {
     <SiteNavbar/>
     <Container fluid>
         <Row>
-            <Col sm={12} md={12} lg={6}>
+            <Col sm={12} md={12} lg={6}  style={{color:'#3B2313'}}>
                 <h2 className='mt-5'>chi siamo</h2>
                 <div className='testo_chisiamo'>
                     <h6>Prima di tutto: perché Archimede?</h6>
