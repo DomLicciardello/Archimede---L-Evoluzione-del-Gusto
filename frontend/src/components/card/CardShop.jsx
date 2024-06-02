@@ -24,18 +24,18 @@ export default function CardShop() {
 
   return (
     <>
-    <Row xs={1} sm={2} md={2} lg={3} xl={4} className="g-3 mt-0">
+    <Row xs={2} sm={2} md={2} lg={4} xl={4} className="g-3 mt-0">
       {data.toReversed().map((product) => (
         <Col>
           <Link to={`/products/${product._id}`} key={product._id} style={{textDecoration:"none"}}>
           <Card
-          style={{height:'300px'}}>
+          style={{height:'400px'}}>
             <Card.Img
             variant="top"
-            style={{objectFit:'cover', height:'100px', width:'100px'}}
+            style={{objectFit:'cover', height:'200px'}}
             src={product.immagine} />
             <Card.Body>
-              <Card.Title>{product.prodotto}</Card.Title>
+              <Card.Title><h2 style={{fontSize:"25px"}}>{product.prodotto}</h2></Card.Title>
               <Card.Text>
               <p style={{fontSize:"14px"}}>
                 {product.descrizione}

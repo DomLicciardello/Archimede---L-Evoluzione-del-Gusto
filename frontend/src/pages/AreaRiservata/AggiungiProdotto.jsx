@@ -75,15 +75,12 @@ export default function AggiungiProdotto() {
   return (
     <>
     <SiteNavbar></SiteNavbar>
-    <div>
+    <div className='mt-4'>
         <h2>aggiungi prodotto</h2>
     </div>
-    <div>
+    <div
+    className='d-flex justify-content-center align-items-center my-4'>
     <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="formImmagine" className="mb-3">
-        <Form.Label>Immagine</Form.Label>
-        <Form.Control type="file"  onChange={(e) => setImmagine(e.target.files[0])}/>
-      </Form.Group>
 
       <Form.Group as={Col} controlId="formProdotto" className="mb-3">
           <Form.Label>Prodotto</Form.Label>
@@ -92,7 +89,12 @@ export default function AggiungiProdotto() {
 
       <Form.Group as={Col} controlId="formPrezzo" className="mb-3">
         <Form.Label>Prezzo</Form.Label>
-        <Form.Control type="number" placeholder="Prezzo" onChange={(e) => setPrezzo(e.target.value)}/>
+        <Form.Control type="number" placeholder="Prezzo" step="any" min="1" max="99" maxLength="4" onChange={(e) => setPrezzo(e.target.value)}/>
+      </Form.Group>
+
+      <Form.Group controlId="formImmagine" className="mb-3">
+        <Form.Label>Immagine</Form.Label>
+        <Form.Control type="file"  onChange={(e) => setImmagine(e.target.files[0])}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formDescrizione">
