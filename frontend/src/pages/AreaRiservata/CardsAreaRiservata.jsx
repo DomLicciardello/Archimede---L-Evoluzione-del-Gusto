@@ -44,14 +44,11 @@ export default function CardShop() {
                 Prezzo: {product.prezzo}€
               </p>
               </Card.Text>
-              <Link to={`/products/${product._id}`} key={product._id} style={{textDecoration:"none"}}>
+              <Link to={`/areariservata/modificaprodotto/${product._id}`} key={product._id} style={{textDecoration:"none"}}>
               <Button variant="warning" type="submit" className='me-2'>
-                Modifica
+                Gestisci prodotto
               </Button>
               </Link>
-              <Button variant="danger" type="submit">
-                Elimina
-              </Button>
             </Card.Body>
           </Card>
         </Col>
