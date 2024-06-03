@@ -3,11 +3,24 @@ import logo from '../../assets/logo.png'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { useState } from 'react';
 import "./style.css"
 
 export default function SiteNavbar() {
+  const [navbar, setNavbar] = useState(false);
+
+  const changeLogo = () => {
+    if(window.scrollY >= 50) {
+      setNavbar(true)
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener('scroll', changeLogo);
+
   return (
-    <Navbar expand="lg" id='archimede_navbar' className="bg-body-tertiary">
+    <Navbar expand="lg" className={navbar ? 'change_logo' : 'archimede_navbar'}>
       <Container>
       <Navbar.Brand href="http://localhost:3000/" className='logo_style d-lg-none'><img src={logo} alt='logo'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
