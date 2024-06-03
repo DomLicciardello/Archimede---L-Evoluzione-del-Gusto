@@ -30,7 +30,7 @@ function SiteCarousel() {
         />
         <Carousel.Caption
         className='carousel_caption_style'>
-          <Link to="/contatti" style={{textDecoration:'none', color:'white'}}>
+          <Link to="/prodotti" style={{textDecoration:'none', color:'white'}}>
             <h2 className='title_carousel_style'>latte di mandorla</h2>
             <p>Panetti disponibili in negozio dal 4 giugno!</p>
           </Link>
@@ -44,7 +44,7 @@ function SiteCarousel() {
         />
         <Carousel.Caption
         className='carousel_caption_style'>
-          <Link to="/prodotti" style={{textDecoration:'none', color:'white'}}>
+          <Link to="/contatti" style={{textDecoration:'none', color:'white'}}>
             <h2 className='title_carousel_style'>prenotazione torte</h2>
             <p>Prenota la tua torta online!</p>
           </Link>

@@ -1,12 +1,14 @@
 .carousel_pic_style {
-    max-height: 650px;
+    max-height: 640px;
     object-fit: cover;
 }
 
-.carousel_caption_style {
-    background-color: #3b2313dd;
-    border-radius: 70px;
-    padding: 20px;
+.carousel_caption_style h2 {
+    text-shadow: 3px 3px 4px black;
+}
+
+.carousel_caption_style p {
+    text-shadow: 2px 2px 2px black;
 }
 
 .title_carousel_style {
@@ -15,6 +17,9 @@
 
 @media screen and (min-width:992px) {
     .title_carousel_style {
-        font-size: 45px;
+        font-size: 60px;
+    }
+    .carousel_caption_style p {
+        font-size: 28px;
     }
 }
