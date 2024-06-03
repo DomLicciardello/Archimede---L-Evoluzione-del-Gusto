@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import carouselpic1 from '../../assets/carousel.jpg'
 import carouselpic2 from '../../assets/carousel2.jpg'
-import carouselpic3 from '../../assets/carousel3.jpg'
+import carouselpic3 from '../../assets/carousel3.jpeg'
 import { Link } from "react-router-dom";
 import './style.css'
 
@@ -17,8 +17,8 @@ function SiteCarousel() {
         <Carousel.Caption
         className='carousel_caption_style'>
           <Link to="/shop" style={{textDecoration:'none', color:'white'}}>
-            <h2 className='title_carousel_style'>visita il nostro shop</h2>
-            <p>Ricevi i nostri biscotti direttamente a casa tua!</p>
+            <h2 className='title_carousel_style'>biscotti di mandorla</h2>
+            <p>I nostri biscotti direttamente a casa tua!</p>
           </Link>
         </Carousel.Caption>
       </Carousel.Item>
@@ -30,9 +30,9 @@ function SiteCarousel() {
         />
         <Carousel.Caption
         className='carousel_caption_style'>
-          <Link to="/prodotti" style={{textDecoration:'none', color:'white'}}>
-            <h2 className='title_carousel_style'>i nostri arancini</h2>
-            <p>Scegli tra vari gusti, puoi prenotare anche con whatsapp!</p>
+          <Link to="/contatti" style={{textDecoration:'none', color:'white'}}>
+            <h2 className='title_carousel_style'>latte di mandorla</h2>
+            <p>Panetti disponibili in negozio dal 4 giugno!</p>
           </Link>
         </Carousel.Caption>
       </Carousel.Item>
@@ -44,9 +44,9 @@ function SiteCarousel() {
         />
         <Carousel.Caption
         className='carousel_caption_style'>
-          <Link to="/contatti" style={{textDecoration:'none', color:'white'}}>
-            <h2 className='title_carousel_style'>panetti latte di mandorla</h2>
-            <p>Disponibili in negozio dal 4 giugno!</p>
+          <Link to="/prodotti" style={{textDecoration:'none', color:'white'}}>
+            <h2 className='title_carousel_style'>prenotazione torte</h2>
+            <p>Prenota la tua torta online!</p>
           </Link>
         </Carousel.Caption>
       </Carousel.Item>
