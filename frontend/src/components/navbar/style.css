@@ -36,8 +36,23 @@
     padding: 10px 45px !important;
 }
 
-@media screen and (min-width:992px) {
+.cart_first_style {
+    visibility: visible;
+}
+
+.cart_second_style {
+    display: none;
+}
+
+@media screen and (min-width:1200px) {
     .logo_style img {
         width: 170px;
+    }
+    .cart_first_style {
+        visibility: hidden;
+    }
+    .cart_second_style {
+        display: block;
+        visibility: visible;
     }
 }
