@@ -10,7 +10,7 @@ export default function SiteNavbar() {
   const [navbar, setNavbar] = useState(false);
 
   const changeLogo = () => {
-    if(window.scrollY >= 50) {
+    if(window.scrollY >= 100) {
       setNavbar(true)
     } else {
       setNavbar(false);
