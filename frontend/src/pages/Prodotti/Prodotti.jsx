@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import { Link } from 'react-router-dom';
+import PrenotaTorta from '../../components/prenota/PrenotaTorta';
 
 import ragu from '../../assets/products/arancini/ragu.jpg'
 import prosciutto from '../../assets/products/arancini/prosciutto.jpg'
@@ -144,6 +145,9 @@ export default function Prodotti() {
             <h2>dolci & gelati</h2>
             <div className='riga_titolo'><span></span></div>
             <h3 style={{textAlign:'center', fontSize:'18px'}}>Vieni in negozio a scoprire tutte le nostre proposte!</h3>
+            <div className='d-flex justify-content-center mt-3'>
+            <PrenotaTorta/>
+            </div>
           </Col>
           <Col md={12}>
             <div className='d-flex flex-wrap justify-content-center align-items-center pt-3'>

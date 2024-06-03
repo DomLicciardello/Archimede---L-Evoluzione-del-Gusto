@@ -4,6 +4,7 @@ import carouselpic2 from '../../assets/carousel2.jpg'
 import carouselpic3 from '../../assets/carousel3.jpeg'
 import { Link } from "react-router-dom";
 import './style.css'
+import PrenotaTorta from '../prenota/PrenotaTorta';
 
 function SiteCarousel() {
   return (
@@ -44,10 +45,8 @@ function SiteCarousel() {
         />
         <Carousel.Caption
         className='carousel_caption_style'>
-          <Link to="/contatti" style={{textDecoration:'none', color:'white'}}>
             <h2 className='title_carousel_style'>prenotazione torte</h2>
-            <p>Prenota la tua torta online!</p>
-          </Link>
+            <PrenotaTorta/>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
