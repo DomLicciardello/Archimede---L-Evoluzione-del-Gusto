@@ -23,7 +23,7 @@ function PrenotaTorta() {
         </Modal.Header>
         <Modal.Body>
         
-        <Form>
+      <Form>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email*</Form.Label>
@@ -86,7 +86,7 @@ function PrenotaTorta() {
       <p>Riceverai un'email di conferma entro 1-2 giorni lavorativi. Le prenotazioni con meno di 48h di anticipo non riceveranno conferma. Se hai prenotato con oltre 48h di anticipo e non ricevi alcuna mail di conferma contattaci al 3895380724.</p>
 
       <Form.Group className="mb-3" id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Privacy" />
+        <Form.Check type="checkbox" label="Privacy" required="required"/>
       </Form.Group>
 
       <Button className='me-2' variant="primary" type="submit">

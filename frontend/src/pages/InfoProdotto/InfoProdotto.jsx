@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import Container from 'react-bootstrap/Container';
@@ -8,10 +8,12 @@ import Button from 'react-bootstrap/Button';
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './style.css'
+import { CartContext } from '../../context/CartContext'; 
 
 export default function InfoProdotto() {
     const { id } = useParams();
     const [data, setData] = useState([]);
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         fetch(`http://localhost:3001/products/${id}`)
@@ -43,8 +45,11 @@ export default function InfoProdotto() {
               <div>
                 <h3 id='nome_prodotto'>{data.prodotto}</h3>
                 <p>{data.descrizione}</p>
-                <p>Prezzo: {data.prezzo}€</p>
-                <Button variant="dark" className='mb-4' style={{backgroundColor:'#3B2313'}}>Aggiungi al carrello</Button>
+                <p><span style={{fontWeight:'500'}}>Prezzo:</span> {data.prezzo}€</p>
+                <Button variant="dark" className='mb-4'
+                style={{backgroundColor:'#3B2313'}}
+                onClick={() => addToCart(data)}
+                >Aggiungi al carrello</Button>
                 <p><b>Quando verrà spedito l'ordine?</b></p>
                 <p>Le spedizioni vengono effettuate il martedì e il mercoledì. Gli ordini effettuati entro il mercoledì alle 8:00 verranno spediti il mercoledì stesso. Il corriere non può garantire la consegna entro il venerdì.</p>
                 <p>Per maggiori informazioni <a href="/contatti">contattaci</a>.</p>
@@ -54,7 +59,7 @@ export default function InfoProdotto() {
             className='d-flex justify-content-center align-items-center mt-3'>
             <Link to='/shop'>
             <Button
-            style={{backgroundColor:'#558259'}}>
+            style={{backgroundColor:'#558259', border:'solid 1px white'}}>
             Torna allo shop
             </Button>
             </Link>

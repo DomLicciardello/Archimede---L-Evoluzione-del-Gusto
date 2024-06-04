@@ -4,7 +4,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import './style.css'
 import ListGroup from 'react-bootstrap/ListGroup';
 import { CartContext } from '../../context/CartContext';
-import ListGroupItem from 'react-bootstrap/esm/ListGroupItem';
+import { Link } from "react-router-dom";
 
 function CartShop() {
   const [show, setShow] = useState(false);
@@ -58,7 +58,9 @@ function CartShop() {
                 <h6>Totale articoli: {cartCount}</h6>
                 <h5>Subtotale: {calculateSubtotal()}€</h5>
               </div>
-              <Button variant="dark" onClick={() => alert('Procedi al pagamento')}>Procedi al pagamento</Button>
+              <Link to='/shop/sendorder'>
+              <Button variant="dark">Procedi al pagamento</Button>
+              </Link>
             </>
           )}
         </Offcanvas.Body>
