@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,12 +8,80 @@ import Form from 'react-bootstrap/Form';
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import { CartContext } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function SendOrder() {
-  const { cartItems, cartCount } = useContext(CartContext);
+  const { cartItems, cartCount, clearCart } = useContext(CartContext);
+  const [email, setEmail] = useState();
+  const [cellulare, setCellulare] = useState();
+  const [nome, setNome] = useState();
+  const [cognome, setCognome] = useState();
+  const [societa, setSocieta] = useState();
+  const [indirizzo, setIndirizzo] = useState();
+  const [indirizzo2, setIndirizzo2] = useState();
+  const [citta, setCitta] = useState();
+  const [stato, setStato] = useState();
+  const [provincia, setProvincia] = useState();
+  const [cap, setCap] = useState();
+  const [note, setNote] = useState();
+  const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    let updatedProducts = [];
+    cartItems.forEach(item => {
+      for (let i = 0; i < item.quantity; i++) {
+        updatedProducts.push(item._id);
+      }
+    });
+    setProducts(updatedProducts);
+  }, [cartItems]);
 
   const calculateSubtotal = () => {
     return cartItems.reduce((total, item) => total + item.prezzo * item.quantity, 0);
+  };
+
+  const spedizione = 7.90;
+  const subtotale = calculateSubtotal();
+  const totale = subtotale + spedizione;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3001/orders", {
+        method: `POST`,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: email,
+            cellulare: cellulare,
+            nome: nome,
+            cognome: cognome,
+            societa: societa,
+            indirizzo: indirizzo,
+            indirizzo2: indirizzo2,
+            citta: citta,
+            stato: stato,
+            provincia: provincia,
+            cap: cap,
+            note: note,
+            products: products,
+            prezzototale: totale,
+        }),
+      });
+
+      if (response.ok) {
+        alert('Ordine effettuato con successo!');
+        clearCart();
+        navigate("/");
+      } else {
+        alert('Ordine fallito!');
+      }
+
+    } catch (error) {
+      alert("Errore nell'invio dell'ordine: ", error);
+    }
   };
 
   return (
@@ -43,63 +111,63 @@ export default function SendOrder() {
                 ))}
               </ListGroup>
               <div className="subtotal mt-3">
-                <h6>Subtotale: {calculateSubtotal()}€</h6>
-                <h6>Spedizione: Corriere Espresso 7,90€</h6>
-                <h5>Totale: {calculateSubtotal() + 7.90}€</h5>
+                <h6>Subtotale: {subtotale}€</h6>
+                <h6>Spedizione: Corriere Espresso {spedizione}€</h6>
+                <h5>Totale: {totale}€</h5>
               </div>
             </Col>
 
             <Col md={6} className='mt-3'>
                 <h3>Inserisci dati</h3>
-            <Form>
+    <Form onSubmit={handleSubmit}>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email*</Form.Label>
-          <Form.Control type="email" placeholder="Email" required="required"/>
+          <Form.Control type="email" placeholder="Email" required="required" onChange={(e) => setEmail(e.target.value)}/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridCel">
           <Form.Label>Cellulare*</Form.Label>
-          <Form.Control type="tel" placeholder="Cellulare" maxLength="10" required="required"/>
+          <Form.Control type="tel" placeholder="Cellulare" maxLength="10" required="required" onChange={(e) => setCellulare(e.target.value)}/>
         </Form.Group>
       </Row>
 
       <Row className="mb-3">
       <Form.Group as={Col} controlId="formGridName">
         <Form.Label>Nome*</Form.Label>
-        <Form.Control placeholder="Nome" required="required"/>
+        <Form.Control placeholder="Nome" required="required" onChange={(e) => setNome(e.target.value)}/>
       </Form.Group>
 
       <Form.Group as={Col} controlId="formGridSurname">
         <Form.Label>Cognome*</Form.Label>
-        <Form.Control placeholder="Cognome" required="required"/>
+        <Form.Control placeholder="Cognome" required="required" onChange={(e) => setCognome(e.target.value)}/>
       </Form.Group>
       </Row>
 
       <Form.Group className="mb-3" controlId="formGridNameSociety">
         <Form.Label>Nome società</Form.Label>
-        <Form.Control placeholder="Nome società (opzionale)"/>
+        <Form.Control placeholder="Nome società (opzionale)" onChange={(e) => setSocieta(e.target.value)}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formGridAddress1">
         <Form.Label>Indirizzo*</Form.Label>
-        <Form.Control placeholder="Via/Piazza e Numero Civico" required="required"/>
+        <Form.Control placeholder="Via/Piazza e Numero Civico" required="required" onChange={(e) => setIndirizzo(e.target.value)}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formGridAddress2">
         <Form.Label>Indirizzo 2</Form.Label>
-        <Form.Control placeholder="Interno, scala, unità, ecc. (opzionale)" />
+        <Form.Control placeholder="Interno, scala, unità, ecc. (opzionale)" onChange={(e) => setIndirizzo2(e.target.value)}/>
       </Form.Group>
 
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Città</Form.Label>
-          <Form.Control placeholder='Fidenza' required="required"/>
+          <Form.Label>Città*</Form.Label>
+          <Form.Control placeholder='Fidenza' required="required" onChange={(e) => setCitta(e.target.value)}/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridState">
-          <Form.Label>Stato</Form.Label>
-          <Form.Select defaultValue="Scegli..." required="required">
+          <Form.Label>Stato*</Form.Label>
+          <Form.Select defaultValue="Scegli..." required="required" onChange={(e) => setStato(e.target.value)}>
             <option>Scegli...</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -351,19 +419,19 @@ export default function SendOrder() {
 
         <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridProvincia">
-          <Form.Label>Provincia</Form.Label>
-          <Form.Control placeholder='Parma' required="required"/>
+          <Form.Label>Provincia*</Form.Label>
+          <Form.Control placeholder='Parma' required="required" onChange={(e) => setProvincia(e.target.value)}/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridCap">
           <Form.Label>CAP*</Form.Label>
-          <Form.Control placeholder='43036' required="required" />
+          <Form.Control placeholder='43036' required="required" onChange={(e) => setCap(e.target.value)}/>
         </Form.Group>
       </Row>
 
         <Form.Group className="mb-4" controlId="formGridAddress2">
         <Form.Label>Note</Form.Label>
-        <Form.Control placeholder="Aggiungi altre informazioni utili per il corriere..." />
+        <Form.Control placeholder="Aggiungi altre informazioni utili per il corriere..." onChange={(e) => setNote(e.target.value)}/>
         </Form.Group>
 
         <hr></hr>

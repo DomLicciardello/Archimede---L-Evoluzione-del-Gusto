@@ -2,6 +2,14 @@ import { Schema, model } from "mongoose";
 
 const ordersSchema = new Schema(
     {
+        email: {
+            type: String,
+            required: true,
+        },
+        cellulare: {
+            type: Number,
+            required: true,
+        },
         nome: {
             type: String,
             required: true,
@@ -14,19 +22,19 @@ const ordersSchema = new Schema(
             type: String,
             required: false,
         },
-        paese: {
-            type: String,
-            required: true,
-        },
         indirizzo: {
             type: String,
             required: true,
         },
-        cap: {
+        indirizzo2: {
+            type: String,
+            required: false,
+        },
+        citta: {
             type: String,
             required: true,
         },
-        città: {
+        stato: {
             type: String,
             required: true,
         },
@@ -34,11 +42,7 @@ const ordersSchema = new Schema(
             type: String,
             required: true,
         },
-        telefono: {
-            type: Number,
-            required: true,
-        },
-        email: {
+        cap: {
             type: String,
             required: true,
         },
@@ -46,7 +50,14 @@ const ordersSchema = new Schema(
             type: String,
             required: false,
         },
-        products: [{ type: Schema.Types.ObjectId, ref: "Product" }]
+        products: [{
+            type: Schema.Types.ObjectId,
+            ref: "Product"
+        }],
+        prezzototale: {
+            type: String,
+            required: true,
+        },
     },
     { collection: "orders", timestamps: true }
 )
