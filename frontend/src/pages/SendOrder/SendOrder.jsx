@@ -41,7 +41,7 @@ export default function SendOrder() {
     return cartItems.reduce((total, item) => total + item.prezzo * item.quantity, 0);
   };
 
-  const spedizione = 7.90;
+  const spedizione = 4.90;
   const subtotale = calculateSubtotal();
   const totale = subtotale + spedizione;
 
@@ -93,7 +93,7 @@ export default function SendOrder() {
             <h2>completa l'ordine</h2>
           </Col>
 
-          <Col md={6} className='mt-3'>
+          <Col xs={12} sm={12} md={12} lg={6} xl={6} className='mt-3'>
             <h3>Riepilogo ordine</h3>
             <h6>Totale articoli: {cartCount}</h6>
               <ListGroup>
@@ -117,7 +117,7 @@ export default function SendOrder() {
               </div>
             </Col>
 
-            <Col md={6} className='mt-3'>
+            <Col xs={12} sm={12} md={12} lg={6} xl={6} className='mt-3'>
                 <h3>Inserisci dati</h3>
     <Form onSubmit={handleSubmit}>
       <Row className="mb-3">

@@ -11,6 +11,7 @@ ordersRoute.get("/", async (req, res, next) => {
         )
         .limit(8)
         .skip(8 * (page - 1))
+        .populate('products')
         res.send(orders)
     } catch (error) {
         next(error);

@@ -14,6 +14,7 @@ import AggiungiProdotto from './pages/AreaRiservata/AggiungiProdotto';
 import ModificaProdotto from './pages/AreaRiservata/ModificaProdotto';
 import { CartProvider } from './context/CartContext';
 import SendOrder from './pages/SendOrder/SendOrder';
+import CronologiaOrdini from './pages/AreaRiservata/CronologiaOrdini';
 
 const isAdminAuth = () => {
   return localStorage.getItem('token') !== null;
@@ -40,6 +41,7 @@ function App() {
         <Route path='/areariservata' element={<PrivateRoute element={<AreaRiservata/>}/>}/>
         <Route path='/areariservata/aggiungiprodotto' element={<PrivateRoute element={<AggiungiProdotto/>}/>}/>
         <Route path='/areariservata/modificaprodotto/:id' element={<PrivateRoute element={<ModificaProdotto/>}/>}/>
+        <Route path='/areariservata/cronologiaordini' element={<PrivateRoute element={<CronologiaOrdini/>}/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
