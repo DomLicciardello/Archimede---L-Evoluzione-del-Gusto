@@ -12,6 +12,7 @@ import Login from './pages/AreaRiservata/Login';
 import AreaRiservata from './pages/AreaRiservata/AreaRiservata';
 import AggiungiProdotto from './pages/AreaRiservata/AggiungiProdotto';
 import ModificaProdotto from './pages/AreaRiservata/ModificaProdotto';
+import { CartProvider } from './context/CartContext';
 
 const isAdminAuth = () => {
   return localStorage.getItem('token') !== null;
@@ -24,6 +25,7 @@ const PrivateRoute = ({ element, ...rest }) => {
 function App() {
   return (
     <>
+    <CartProvider>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -39,6 +41,7 @@ function App() {
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
+    </CartProvider>
     </>
   );
 }
