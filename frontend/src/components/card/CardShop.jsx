@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
+import './style.css'
 
 export default function CardShop() {
     const [data, setData] = useState([]);
@@ -49,9 +49,11 @@ export default function CardShop() {
               </Card.Text>
               <Button
               variant="dark"
+              className='button_shop_card'
               style={{backgroundColor:'#3B2313'}}
               onClick={() => addToCart(product)}>
-                Aggiungi al carrello
+                <ion-icon name="cart-outline"></ion-icon>
+                <span className='ms-1'>Aggiungi al carrello</span>
               </Button>
             </Card.Body>
           </Card>

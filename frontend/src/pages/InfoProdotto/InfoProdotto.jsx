@@ -46,10 +46,13 @@ export default function InfoProdotto() {
                 <h3 id='nome_prodotto'>{data.prodotto}</h3>
                 <p>{data.descrizione}</p>
                 <p><span style={{fontWeight:'500'}}>Prezzo:</span> {data.prezzo}€</p>
-                <Button variant="dark" className='mb-4'
+                <Button variant="dark"
                 style={{backgroundColor:'#3B2313'}}
-                onClick={() => addToCart(data)}
-                >Aggiungi al carrello</Button>
+                className='button_shop_card mb-4'
+                onClick={() => addToCart(data)}>
+                  <ion-icon name="cart-outline"></ion-icon>
+                  <span className='ms-1'>Aggiungi al carrello</span>
+                </Button>
                 <p><b>Quando verrà spedito l'ordine?</b></p>
                 <p>Le spedizioni vengono effettuate il martedì e il mercoledì. Gli ordini effettuati entro il mercoledì alle 8:00 verranno spediti il mercoledì stesso. Il corriere non può garantire la consegna entro il venerdì.</p>
                 <p>Per maggiori informazioni <a href="/contatti">contattaci</a>.</p>

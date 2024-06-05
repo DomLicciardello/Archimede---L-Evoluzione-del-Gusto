@@ -5,6 +5,7 @@ import cors from 'cors';
 import { productsRoute } from './services/products/index.js'
 import { ordersRoute } from './services/orders/index.js'
 import { adminRoute } from "./services/admin/index.js";
+import routerMail from "./services/email/sendMail.js"
 import { badRequestHandler, genericErrorHandler, notfoundHandler, unauthorizedHandler } from "./errorHandlers.js"
 
 config();
@@ -12,12 +13,12 @@ const app = express()
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
-
 app.use(cors());
 
 app.use("/products", productsRoute);
 app.use("/orders", ordersRoute);
-app.use("/admin", adminRoute)
+app.use("/admin", adminRoute);
+app.use(routerMail);
 
 app.use(badRequestHandler);
 app.use(unauthorizedHandler);

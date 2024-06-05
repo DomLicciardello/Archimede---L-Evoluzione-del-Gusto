@@ -1,0 +1,9 @@
+.button_shop_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_shop_card:active {
+    transform: scale(0.95);
+}
