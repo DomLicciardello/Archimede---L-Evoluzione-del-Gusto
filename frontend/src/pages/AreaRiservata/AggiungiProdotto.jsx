@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function AggiungiProdotto() {
     const [prodotto, setProdotto] = useState();
@@ -102,10 +102,19 @@ export default function AggiungiProdotto() {
         <Form.Control as="textarea" placeholder="Descrizione..." onChange={(e) => setDescrizione(e.target.value)}/>
       </Form.Group>
 
-      <Button variant="dark" type="submit">
+      <Button variant="success" type="submit">
         Aggiungi
       </Button>
     </Form>
+    </div>
+    <div
+            className='d-flex justify-content-center align-items-center mt-3 mb-3'>
+            <Link to='/areariservata'>
+            <Button
+            style={{backgroundColor:'#3B2313', border:'none'}}>
+            Torna indietro
+            </Button>
+            </Link>
     </div>
     <SiteHomeFooter></SiteHomeFooter>
     </>

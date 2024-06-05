@@ -178,7 +178,7 @@ export default function InfoProdotto() {
             className='d-flex justify-content-center align-items-center mt-3'>
             <Link to='/areariservata'>
             <Button
-            style={{backgroundColor:'#3B2313'}}>
+            style={{backgroundColor:'#3B2313', border:'none'}}>
             Torna indietro
             </Button>
             </Link>

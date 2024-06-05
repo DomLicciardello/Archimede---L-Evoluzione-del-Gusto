@@ -2,7 +2,9 @@ import React from 'react'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import Accordion from 'react-bootstrap/Accordion';
@@ -29,15 +31,24 @@ export default function CronologiaOrdini() {
   return (
     <>
     <SiteNavbar></SiteNavbar>
-    <Container>
+    <Container style={{minHeight:'62vh'}}>
     <Row className='mt-4'>
-        <Col>
+        <Col md={12}>
         <h2>cronologia ordini</h2>
+        </Col>
+        <Col md={12}
+        className='d-flex justify-content-center align-items-center mt-3 mb-2'>
+            <Link to='/areariservata'>
+            <Button
+            style={{backgroundColor:'#3B2313', border:'none'}}>
+            Torna indietro
+            </Button>
+            </Link>
         </Col>
     </Row>
     <Row md={12} className="mt-3 mb-4">
       {data.toReversed().map((order) => (
-        <Col key={order._id}>
+        <Col md={12} className='mb-1' key={order._id}>
         <Accordion>
       <Accordion.Item eventKey="0">
         <Accordion.Header><span style={{fontWeight:'600', borderBottom:'solid 1px black', marginRight:'10px'}}>{order.email}</span>{order.createdAt}</Accordion.Header>
