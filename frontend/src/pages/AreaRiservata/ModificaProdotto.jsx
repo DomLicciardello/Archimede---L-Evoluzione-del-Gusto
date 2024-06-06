@@ -95,6 +95,11 @@ export default function InfoProdotto() {
           }
       };
 
+      const formatPrice = (price) => {
+        const priceNumber = parseFloat(price);
+        return priceNumber.toLocaleString('it-IT', { minimumFractionDigits: 2 });
+    }
+
   return (
     <>
     <SiteNavbar/>
@@ -120,7 +125,7 @@ export default function InfoProdotto() {
                 {data.descrizione}
               </p>
               <p style={{fontSize:"14px"}}>
-                Prezzo: {data.prezzo}€
+                Prezzo: {formatPrice(data.prezzo)}€
               </p>
               </Card.Text>
             </Card.Body>

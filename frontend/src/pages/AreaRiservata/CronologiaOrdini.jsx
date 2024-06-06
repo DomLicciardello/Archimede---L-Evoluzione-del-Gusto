@@ -15,7 +15,6 @@ export default function CronologiaOrdini() {
     const [data, setData] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
 
-
     useEffect(() => {
         fetch('http://localhost:3001/orders/', {
           headers: {
@@ -30,10 +29,25 @@ export default function CronologiaOrdini() {
         .catch(error => console.log(error))
       },[]);
 
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        return `${day < 10 ? '0' + day : day}-${month < 10 ? '0' + month : month}-${year} / ${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+    };
+
       const filteredData = data.filter((order) => 
         order.email.toLowerCase().includes(searchQuery.toLowerCase()) || 
         order.createdAt.toLowerCase().includes(searchQuery.toLowerCase())
-    );    
+    );
+
+    const formatPrice = (price) => {
+        const priceNumber = parseFloat(price);
+        return priceNumber.toLocaleString('it-IT', { minimumFractionDigits: 2 });
+    }
 
   return (
 <>
@@ -53,7 +67,7 @@ export default function CronologiaOrdini() {
                 <Col md={12} className='d-flex justify-content-center align-items-center mt-3 mb-2'>
                     <input 
                         type="text" 
-                        placeholder="Cerca per email o data" 
+                        placeholder="Cerca per email o data..." 
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         style={{ padding: '5px', width: '300px', borderRadius: '4px', border: '1px solid #ccc' }}
@@ -66,10 +80,12 @@ export default function CronologiaOrdini() {
                         <Accordion>
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>
-                                    <span style={{fontWeight:'600', borderBottom:'solid 1px black', marginRight:'10px'}}>
+                                    <span style={{fontWeight:'600', borderBottom:'solid 1px black', marginRight:'10px', fontFamily:'sans-serif'}}>
                                         {order.email}
                                     </span>
-                                    {order.createdAt}
+                                    <span style={{fontWeight:'500'}}>
+                                      {formatDate(order.createdAt)}
+                                    </span>
                                 </Accordion.Header>
                                 <Accordion.Body>
                                     <ListGroup>
@@ -92,15 +108,15 @@ export default function CronologiaOrdini() {
                                             <span style={{fontWeight:'600'}}>Prodotti acquistati:</span>
                                             <ul>
                                                 {order.products.map((product, index) => (
-                                                    <li key={index}>{product.prodotto} - {product.prezzo}€</li>
+                                                    <li key={index}>{product.prodotto} - {formatPrice(product.prezzo)}€</li>
                                                 ))}
                                             </ul>
                                         </ListGroupItem>
                                         <ListGroup.Item>
-                                            <span style={{fontWeight:'600'}}>Totale spesa:</span> {order.prezzototale}€ / spedizione inclusa
+                                            <span style={{fontWeight:'600'}}>Totale spesa:</span> {formatPrice(order.prezzototale)}€ / spedizione inclusa
                                         </ListGroup.Item>
                                         <ListGroup.Item>
-                                            <span style={{fontWeight:'600'}}>Data ordine:</span> {order.createdAt}
+                                            <span style={{fontWeight:'600'}}>Data ordine:</span> {formatDate(order.createdAt)}
                                         </ListGroup.Item>
                                     </ListGroup>
                                 </Accordion.Body>

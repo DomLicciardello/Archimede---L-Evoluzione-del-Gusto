@@ -103,6 +103,11 @@ export default function SendOrder() {
     }
   };
 
+  const formatPrice = (price) => {
+    const priceNumber = parseFloat(price);
+    return priceNumber.toLocaleString('it-IT', { minimumFractionDigits: 2 });
+}
+
   return (
     <>
       <SiteNavbar />
@@ -123,16 +128,16 @@ export default function SendOrder() {
                     <div>
                       <img src={item.immagine} alt="img_prodotto" className='img_product_card'/>
                       <span style={{ fontWeight: '700', marginLeft: '10px' }}>{item.prodotto}</span>
-                      <span style={{ fontWeight: '500', marginLeft: '5px' }}>{item.prezzo}€</span>
+                      <span style={{ fontWeight: '500', marginLeft: '5px' }}>{formatPrice(item.prezzo)}€</span>
                       <span style={{ fontWeight: '600', marginLeft: '10px' }}>x{item.quantity}</span>
                     </div>
                   </ListGroup.Item>
                 ))}
               </ListGroup>
               <div className="subtotal mt-3">
-                <h6>Subtotale: {subtotale}€</h6>
-                <h6>Spedizione: Corriere Espresso {spedizione}€</h6>
-                <h5>Totale: {totale}€</h5>
+                <h6>Subtotale: {formatPrice(subtotale)}€</h6>
+                <h6>Spedizione: Corriere Espresso {formatPrice(spedizione)}€</h6>
+                <h5>Totale: {formatPrice(totale)}€</h5>
               </div>
             </Col>
 

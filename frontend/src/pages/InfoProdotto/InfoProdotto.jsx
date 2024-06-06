@@ -23,7 +23,12 @@ export default function InfoProdotto() {
             //console.log(data);
         })
         .catch(error => console.log(error))
-      },[]);
+      },[id]);
+
+      const formatPrice = (price) => {
+        const priceNumber = parseFloat(price);
+        return priceNumber.toLocaleString('it-IT', { minimumFractionDigits: 2 });
+    }
 
   return (
     <>
@@ -45,7 +50,7 @@ export default function InfoProdotto() {
               <div>
                 <h3 id='nome_prodotto'>{data.prodotto}</h3>
                 <p>{data.descrizione}</p>
-                <p><span style={{fontWeight:'500'}}>Prezzo:</span> {data.prezzo}€</p>
+                <p><span style={{fontWeight:'500'}}>Prezzo:</span> {formatPrice(data.prezzo)}€</p>
                 <Button variant="dark"
                 style={{backgroundColor:'#3B2313'}}
                 className='button_shop_card mb-4'

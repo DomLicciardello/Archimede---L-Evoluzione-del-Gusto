@@ -25,6 +25,11 @@ export default function CardShop() {
         .catch(error => console.log(error))
       },[]);
 
+    const formatPrice = (price) => {
+      const priceNumber = parseFloat(price);
+      return priceNumber.toLocaleString('it-IT', { minimumFractionDigits: 2 });
+  }
+
   return (
     <>
     <Row xs={2} sm={2} md={2} lg={4} xl={4} className="g-3 mt-0">
@@ -44,7 +49,7 @@ export default function CardShop() {
               </Link>
               <Card.Text>
               <p style={{fontSize:"14px"}}>
-                Prezzo: {product.prezzo}€
+                Prezzo: {formatPrice(product.prezzo)}€
               </p>
               </Card.Text>
               <Button
