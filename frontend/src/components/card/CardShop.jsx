@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import './style.css'
 
-export default function CardShop() {
+export default function CardShop({ showShopAlert }) {
     const [data, setData] = useState([]);
     const { addToCart } = useContext(CartContext);
 
@@ -30,6 +30,11 @@ export default function CardShop() {
       return priceNumber.toLocaleString('it-IT', { minimumFractionDigits: 2 });
   }
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    showShopAlert();
+  };
+
   return (
     <>
     <Row xs={2} sm={2} md={2} lg={4} xl={4} className="g-3 mt-0">
@@ -47,19 +52,22 @@ export default function CardShop() {
             <Link to={`/products/${product._id}`} style={{textDecoration:"none"}}>
               <Card.Title><h2 style={{fontSize:"25px", color:"#3B2313"}}>{product.prodotto}</h2></Card.Title>
               </Link>
+              <hr></hr>
               <Card.Text>
               <p style={{fontSize:"14px"}}>
-                Prezzo: {formatPrice(product.prezzo)}€
+                <span style={{fontWeight:'600'}}>Prezzo:</span> {formatPrice(product.prezzo)}€
               </p>
               </Card.Text>
+              <div>
               <Button
               variant="dark"
               className='button_shop_card'
               style={{backgroundColor:'#3B2313'}}
-              onClick={() => addToCart(product)}>
+              onClick={() => handleAddToCart(product)}>
                 <ion-icon name="cart-outline"></ion-icon>
                 <span className='ms-1'>Aggiungi al carrello</span>
               </Button>
+              </div>
             </Card.Body>
           </Card>
         </Col>

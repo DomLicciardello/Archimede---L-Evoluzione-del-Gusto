@@ -38,6 +38,7 @@ function CartShop() {
             <p>Il carrello è vuoto.</p>
           ) : (
             <>
+              <h6>Totale articoli: {cartCount}</h6>
               <ListGroup>
               {cartItems.map((item) => (
                 <ListGroup.Item
@@ -60,7 +61,6 @@ function CartShop() {
                 ))}
               </ListGroup>
               <div className="subtotal mt-3">
-                <h6>Totale articoli: {cartCount}</h6>
                 <h5>Subtotale: {formatPrice(calculateSubtotal())}€</h5>
               </div>
               <Link to='/shop/sendorder'>

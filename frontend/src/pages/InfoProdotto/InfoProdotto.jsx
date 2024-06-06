@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import SiteNavbar from '../../components/navbar/SiteNavbar';
 import SiteHomeFooter from '../../components/home/SiteHomeFooter';
 import Container from 'react-bootstrap/Container';
@@ -6,14 +6,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import './style.css'
 import { CartContext } from '../../context/CartContext'; 
+import Alert from 'react-bootstrap/Alert';
 
 export default function InfoProdotto() {
     const { id } = useParams();
     const [data, setData] = useState([]);
     const { addToCart } = useContext(CartContext);
+    const [showAlert, setShowAlert] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:3001/products/${id}`)
@@ -28,6 +29,14 @@ export default function InfoProdotto() {
       const formatPrice = (price) => {
         const priceNumber = parseFloat(price);
         return priceNumber.toLocaleString('it-IT', { minimumFractionDigits: 2 });
+    }
+
+    const handleAddToCart = (product) => {
+      addToCart(product);
+      setShowAlert(true);
+      setTimeout(() => {
+          setShowAlert(false);
+      }, 3000);
     }
 
   return (
@@ -54,7 +63,7 @@ export default function InfoProdotto() {
                 <Button variant="dark"
                 style={{backgroundColor:'#3B2313'}}
                 className='button_shop_card mb-4'
-                onClick={() => addToCart(data)}>
+                onClick={() => handleAddToCart(data)}>
                   <ion-icon name="cart-outline"></ion-icon>
                   <span className='ms-1'>Aggiungi al carrello</span>
                 </Button>
@@ -75,6 +84,14 @@ export default function InfoProdotto() {
         </Row>
     </Container>
     <SiteHomeFooter/>
+
+    {showAlert && (
+      <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '99', width:'400px' }}>
+        <Alert variant='success pb-0'>
+          <p style={{textAlign:'center', fontWeight:'600'}}>Prodotto aggiunto al carrello!</p>
+        </Alert>
+      </div>
+    )}
     </>
   )
 }
