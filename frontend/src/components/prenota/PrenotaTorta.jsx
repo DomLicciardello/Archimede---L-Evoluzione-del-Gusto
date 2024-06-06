@@ -145,10 +145,10 @@ function PrenotaTorta() {
         <Form.Check type="checkbox" label="Privacy" required="required"/>
       </Form.Group>
 
-      <Button className='me-2' variant="primary" type="submit">
+      <Button className='me-2' variant="success" style={{backgroundColor:'#558259', border:'none'}} type="submit">
         Prenota
       </Button>
-      <Button variant="danger" onClick={handleClose}>
+      <Button variant="danger" style={{backgroundColor:'#FF4800', border:'none'}} onClick={handleClose}>
         Annulla
       </Button>
     </Form>

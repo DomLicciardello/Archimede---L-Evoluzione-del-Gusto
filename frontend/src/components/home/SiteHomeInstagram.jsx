@@ -32,8 +32,8 @@ export default function SiteHomeInstagram() {
           position:'relative'
           }}>
           <div className='insta_scroll'>
-            {filenames.map(filename => {
-            return <img
+            {filenames.map((filename, index)=> {
+            return <img key={index}
             src={filename} alt={filename}
             style={{width:'283px'}}
             />

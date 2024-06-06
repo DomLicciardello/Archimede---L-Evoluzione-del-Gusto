@@ -46,18 +46,18 @@ export default function InfoProdotto() {
         <Row className='pt-4 pb-4'>
             <Col md={12}
             className='mb-4'>
-                <h2>shop online</h2>
+                <h2>{data.prodotto}</h2>
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} xl={6}>
               <div className='d-flex align-items-center justify-content-center'>
                 <img src={data.immagine} alt="immagine_prodotto"
-                style={{maxWidth:'400px', border:'solid 1px #3B2313', borderRadius:'30px', objectFit:'center'}} />
+                style={{maxWidth:'480px', border:'2px #3B2313 solid', borderRadius:'50px', objectFit:'center'}} />
               </div>
             </Col>
             <Col xs={12} sm={12} md={12} lg={12} xl={6}
             className='mt-2'>
               <div>
-                <h3 id='nome_prodotto'>{data.prodotto}</h3>
+              
                 <p>{data.descrizione}</p>
                 <p><span style={{fontWeight:'500'}}>Prezzo:</span> {formatPrice(data.prezzo)}€</p>
                 <Button variant="dark"

@@ -102,7 +102,7 @@ export default function AggiungiProdotto() {
         <Form.Control as="textarea" placeholder="Descrizione..." onChange={(e) => setDescrizione(e.target.value)}/>
       </Form.Group>
 
-      <Button variant="success" type="submit">
+      <Button variant="success" type="submit" style={{backgroundColor:'#558259', border:'none'}}>
         Aggiungi
       </Button>
     </Form>

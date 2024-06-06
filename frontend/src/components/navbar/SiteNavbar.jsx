@@ -3,25 +3,12 @@ import logo from '../../assets/logo.png'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useState } from 'react';
 import CartShop from '../cart/CartShop';
 import "./style.css"
 
 export default function SiteNavbar() {
-  const [navbar, setNavbar] = useState(false);
-
-  const changeLogo = () => {
-    if(window.scrollY >= 100) {
-      setNavbar(true)
-    } else {
-      setNavbar(false);
-    }
-  };
-
-  window.addEventListener('scroll', changeLogo);
-
   return (
-    <Navbar expand="xl" className={navbar ? 'change_logo' : 'archimede_navbar'}>
+    <Navbar expand="xl" className='archimede_navbar'>
       <Container>
       <Navbar.Brand href="http://localhost:3000/" className='logo_style d-xl-none'><img src={logo} alt='logo'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
