@@ -484,7 +484,7 @@ export default function SendOrder() {
 
       <p>* campi obbligatori</p>
 
-      <Button className='me-2' variant="success" type="submit">
+      <Button className='me-2' variant="success" type="submit" style={{backgroundColor:'#558259'}}>
         Conferma acquisto
       </Button>
       </Form>

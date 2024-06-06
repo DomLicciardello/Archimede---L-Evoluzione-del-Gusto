@@ -46,10 +46,10 @@ function CartShop() {
                   style={{fontWeight:'500', marginLeft:'5px'}}>{item.prezzo}€</span>
                   </div>
                   <div>
-                  <Button className='px-2 py-0 mx-1' variant="success" onClick={() => incrementQuantity(item._id)}>+</Button>
+                  <Button className='px-2 py-0 mx-1' variant="success" style={{backgroundColor:'#558259', border:'none'}} onClick={() => incrementQuantity(item._id)}>+</Button>
                   <span
-                  style={{fontWeight:'600', border:'solid black 1px', padding:'0px 3px 3px 3px'}}>x{item.quantity}</span>
-                  <Button className='px-2 py-0 mx-1' variant="danger" onClick={() => decrementQuantity(item._id)}>-</Button>
+                  style={{fontWeight:'600', border:'solid black 1px', padding:'0px 4px 3px 4px'}}>x{item.quantity}</span>
+                  <Button className='px-2 py-0 mx-1' variant="danger" style={{backgroundColor:'#FF4800', border:'none'}} onClick={() => decrementQuantity(item._id)}>-</Button>
                   </div>
                 </ListGroup.Item>
                 ))}
@@ -59,7 +59,7 @@ function CartShop() {
                 <h5>Subtotale: {calculateSubtotal()}€</h5>
               </div>
               <Link to='/shop/sendorder'>
-              <Button variant="dark">Procedi al pagamento</Button>
+              <Button variant="dark" style={{backgroundColor:'#3B2313'}}>Procedi al pagamento</Button>
               </Link>
             </>
           )}
