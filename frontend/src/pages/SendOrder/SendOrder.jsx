@@ -72,7 +72,26 @@ export default function SendOrder() {
       });
 
       if (response.ok) {
-        alert('Ordine effettuato con successo!');
+        const emailResponse = await fetch("http://localhost:3001/acquistocompletato", {
+          method: `POST`,
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: email,
+            nome: nome,
+            cognome: cognome,
+            ordine: products,
+            totale: totale
+          }),
+        });
+
+        if (emailResponse.ok) {
+          alert('Ordine effettuato con successo! Un riepilogo è stato mandato alla tua email!');
+        } else {
+          alert('Ordine effettuato con successo! Non siamo riusciti a inviarti il riepilogo via email!');
+        }
+        
         clearCart();
         navigate("/");
       } else {
