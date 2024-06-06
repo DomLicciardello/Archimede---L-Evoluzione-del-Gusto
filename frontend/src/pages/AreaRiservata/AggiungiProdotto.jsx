@@ -65,7 +65,6 @@ export default function AggiungiProdotto() {
             throw new Error("Caricamento immagine fallito!");
           }
     
-          const { immagine } = await response.json();
           alert("Il nuovo prodotto è stato aggiunto allo shop!");
         } catch (error) {
           console.error("Errore caricamento immagine:", error);

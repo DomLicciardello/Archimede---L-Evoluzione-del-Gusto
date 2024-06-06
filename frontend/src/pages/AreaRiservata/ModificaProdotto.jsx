@@ -35,7 +35,7 @@ export default function InfoProdotto() {
             //console.log(data);
         })
         .catch(error => console.log(error))
-      },[]);
+      },[id]);
 
       const handleSubmit = async (e) => {
         e.preventDefault();
