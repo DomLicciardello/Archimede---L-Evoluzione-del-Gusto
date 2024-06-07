@@ -93,7 +93,7 @@ export default function SendOrder() {
         }
         
         clearCart();
-        navigate("/");
+        navigate("/shop/orderconfirmed");
       } else {
         alert('Ordine fallito!');
       }
@@ -462,18 +462,18 @@ export default function SendOrder() {
 
         <Form.Group className="mb-3" controlId="formGridCarta">
           <Form.Label>Numero carta*</Form.Label>
-          <Form.Control type="text" placeholder="1234 1234 1234 1234" maxLength="16" required="required"/>
+          <Form.Control type="text" placeholder="1234 1234 1234 1234" maxLength="19" required="required"/>
         </Form.Group>
 
         <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridMeseScadenza">
           <Form.Label>Mese*</Form.Label>
-          <Form.Control type="text" placeholder="MM" maxLength="2" required="required"/>
+          <Form.Control type="number" placeholder="MM" min='1' max='12' required="required"/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridScadenza">
           <Form.Label>Anno*</Form.Label>
-          <Form.Control type="text" placeholder="AA" maxLength="2" required="required"/>
+          <Form.Control type="number" placeholder="AA" min='24' max="99" required="required"/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridCVC">

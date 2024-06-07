@@ -16,6 +16,7 @@ import { CartProvider } from './context/CartContext';
 import SendOrder from './pages/SendOrder/SendOrder';
 import CronologiaOrdini from './pages/AreaRiservata/CronologiaOrdini';
 import ScrollToTop from './components/scrolltop/ScrollToTop';
+import OrderConfirmed from './pages/OrderConfirmed/OrderConfirmed';
 
 const isAdminAuth = () => {
   return localStorage.getItem('token') !== null;
@@ -38,6 +39,7 @@ function App() {
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/products/:id' element={<InfoProdotto/>}/>
         <Route path='/shop/sendorder' element={<SendOrder/>}/>
+        <Route path='/shop/orderconfirmed' element={<OrderConfirmed/>}/>
         <Route path='/contatti' element={<Contatti/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/areariservata' element={<PrivateRoute element={<AreaRiservata/>}/>}/>

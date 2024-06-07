@@ -6,17 +6,20 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import Loading from '../../components/spinner/Loading';
 
 export default function AggiungiProdotto() {
     const [prodotto, setProdotto] = useState();
     const [descrizione, setDescrizione] = useState();
     const [prezzo, setPrezzo] = useState();
     const [immagine, setImmagine] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const token = localStorage.getItem('token')
   
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         try {
           const response = await fetch("http://localhost:3001/products", {
             method: `POST`,
@@ -45,6 +48,8 @@ export default function AggiungiProdotto() {
 
         } catch (error) {
           alert("Aggiunta prodotto fallita: ", error);
+        } finally {
+          setIsLoading(false);
         }
       };
     
@@ -101,19 +106,19 @@ export default function AggiungiProdotto() {
         <Form.Control as="textarea" placeholder="Descrizione..." onChange={(e) => setDescrizione(e.target.value)}/>
       </Form.Group>
 
-      <Button variant="success" type="submit" style={{backgroundColor:'#558259', border:'none'}}>
-        Aggiungi
+      <Button variant="success" type="submit" style={{ backgroundColor: '#558259', border: 'none' }}>
+      {isLoading ? <Loading isLoading={isLoading} /> : 'Aggiungi'}
       </Button>
     </Form>
     </div>
     <div
-            className='d-flex justify-content-center align-items-center mt-3 mb-3'>
-            <Link to='/areariservata'>
-            <Button
-            style={{backgroundColor:'#3B2313', border:'none'}}>
-            Torna indietro
-            </Button>
-            </Link>
+      className='d-flex justify-content-center align-items-center mt-3 mb-3'>
+      <Link to='/areariservata'>
+      <Button
+      style={{backgroundColor:'#3B2313', border:'none'}}>
+      Torna indietro
+      </Button>
+      </Link>
     </div>
     <SiteHomeFooter></SiteHomeFooter>
     </>

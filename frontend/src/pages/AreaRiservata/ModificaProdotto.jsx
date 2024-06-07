@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Loading from '../../components/spinner/Loading';
 
 export default function InfoProdotto() {
     const { id } = useParams();
@@ -18,7 +19,8 @@ export default function InfoProdotto() {
     const [descrizione, setDescrizione] = useState();
     const [prezzo, setPrezzo] = useState();
     const [immagine, setImmagine] = useState(null);
-    const token = localStorage.getItem('token')
+    const [isLoading, setIsLoading] = useState(false);
+    const token = localStorage.getItem('token');
     const navigate = useNavigate();
     const formData = new FormData();
     formData.append('immagine', immagine);
@@ -39,6 +41,7 @@ export default function InfoProdotto() {
 
       const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         const response = await fetch(`http://localhost:3001/products/${id}`, {
             method: `PUT`,
             headers: {
@@ -62,6 +65,7 @@ export default function InfoProdotto() {
 
       const handleImg = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         const response = await fetch(`http://localhost:3001/products/${id}/img`, {
             method: `PATCH`,
             headers: {
@@ -108,6 +112,11 @@ export default function InfoProdotto() {
             <Col md={12}
             className='mb-4'>
                 <h2>modifica o elimina</h2>
+            </Col>
+
+            <Col md={12}
+            className='d-flex justify-content-center'>
+            {isLoading && <Loading isLoading={isLoading} />}
             </Col>
             
             <Col xs={12} sm={12} md={12} lg={4} xl={4}>
