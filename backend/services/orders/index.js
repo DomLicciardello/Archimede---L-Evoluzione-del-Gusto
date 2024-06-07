@@ -9,8 +9,8 @@ ordersRoute.get("/", async (req, res, next) => {
         let orders = await Order.find(
             req.query.email ? { email: { $regex: req.query.email } } : {}
         )
-        .limit(8)
-        .skip(8 * (page - 1))
+        .limit(20)
+        .skip(20 * (page - 1))
         .populate('products')
         res.send(orders)
     } catch (error) {
